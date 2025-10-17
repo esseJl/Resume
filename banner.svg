@@ -1,167 +1,7 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رزومه اسماعیل جلیلی</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f5fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 6px 15px rgba(106,27,154,0.2);
-            animation: fadeInDown 1.2s ease-out;
-            overflow: hidden;
-        }
-        header svg {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        section {
-            background: white;
-            margin: 25px 0;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            animation: fadeInUp 1.2s ease-out;
-            transition: box-shadow 0.3s ease;
-        }
-        section:hover {
-            box-shadow: 0 6px 18px rgba(106,27,154,0.1);
-        }
-        h2 {
-            color: #6a1b9a;
-            border-bottom: 2px solid #ab47bc;
-            padding-bottom: 12px;
-            margin-bottom: 25px;
-            font-size: 2em;
-            position: relative;
-            overflow: hidden;
-        }
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, #ab47bc, transparent);
-            animation: slideIn 1.5s ease-out;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .skill-category {
-            background: #f9f5fc;
-            padding: 20px;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(106,27,154,0.15);
-        }
-        .skill-category h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: #6a1b9a;
-        }
-        .skill-category ul {
-            list-style: none;
-            padding: 0;
-        }
-        .skill-category li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: color 0.3s ease;
-        }
-        .skill-category li:hover {
-            color: #ab47bc;
-        }
-        .experience-item {
-            margin-bottom: 35px;
-            padding: 20px;
-            background: #fcfaff;
-            border-radius: 15px;
-            transition: box-shadow 0.3s ease;
-        }
-        .experience-item:hover {
-            box-shadow: 0 4px 12px rgba(106,27,154,0.1);
-        }
-        .experience-item h3 {
-            font-size: 1.5em;
-            color: #6a1b9a;
-            margin-bottom: 8px;
-        }
-        .experience-item p {
-            margin: 8px 0;
-        }
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
-        }
-        .tech-tag {
-            background: #e1bee7;
-            color: #6a1b9a;
-            padding: 6px 12px;
-            border-radius: 25px;
-            font-size: 0.95em;
-            transition: background 0.3s ease;
-        }
-        .tech-tag:hover {
-            background: #ce93d8;
-        }
-        .languages, .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideIn {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @media (max-width: 768px) {
-            header { padding: 50px 15px; }
-            .container { padding: 15px; }
-            section { padding: 25px; }
-            .skills-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="460.8pt" height="125.28pt" viewBox="0 0 460.8 125.28" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="460.8pt" height="125.28pt" viewBox="0 0 460.8 125.28" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -246,6 +86,212 @@ L 364.32 34.92
 L 353.16 23.832 
 z
 " clip-path="url(#p0cdabe6a26)" style="fill: #6a1b9a; stroke: #6a1b9a; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <!-- HTML Resume -->
+    <g style="fill: #ffffff" transform="translate(145.081875 58.1745) scale(0.24 -0.24)">
+     <defs>
+      <path id="DejaVuSans-48" d="M 628 4666 
+L 1259 4666 
+L 1259 2753 
+L 3553 2753 
+L 3553 4666 
+L 4184 4666 
+L 4184 0 
+L 3553 0 
+L 3553 2222 
+L 1259 2222 
+L 1259 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-54" d="M -19 4666 
+L 3928 4666 
+L 3928 4134 
+L 2272 4134 
+L 2272 0 
+L 1638 0 
+L 1638 4134 
+L -19 4134 
+L -19 4666 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-4d" d="M 628 4666 
+L 1569 4666 
+L 2759 1491 
+L 3956 4666 
+L 4897 4666 
+L 4897 0 
+L 4281 0 
+L 4281 4097 
+L 3078 897 
+L 2444 897 
+L 1241 4097 
+L 1241 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-4c" d="M 628 4666 
+L 1259 4666 
+L 1259 531 
+L 3531 531 
+L 3531 0 
+L 628 0 
+L 628 4666 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-20" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-52" d="M 2841 2188 
+Q 3044 2119 3236 1894 
+Q 3428 1669 3622 1275 
+L 4263 0 
+L 3584 0 
+L 2988 1197 
+Q 2756 1666 2539 1819 
+Q 2322 1972 1947 1972 
+L 1259 1972 
+L 1259 0 
+L 628 0 
+L 628 4666 
+L 2053 4666 
+Q 2853 4666 3247 4331 
+Q 3641 3997 3641 3322 
+Q 3641 2881 3436 2590 
+Q 3231 2300 2841 2188 
+z
+M 1259 4147 
+L 1259 2491 
+L 2053 2491 
+Q 2509 2491 2742 2702 
+Q 2975 2913 2975 3322 
+Q 2975 3731 2742 3939 
+Q 2509 4147 2053 4147 
+L 1259 4147 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-65" d="M 3597 1894 
+L 3597 1613 
+L 953 1613 
+Q 991 1019 1311 708 
+Q 1631 397 2203 397 
+Q 2534 397 2845 478 
+Q 3156 559 3463 722 
+L 3463 178 
+Q 3153 47 2828 -22 
+Q 2503 -91 2169 -91 
+Q 1331 -91 842 396 
+Q 353 884 353 1716 
+Q 353 2575 817 3079 
+Q 1281 3584 2069 3584 
+Q 2775 3584 3186 3129 
+Q 3597 2675 3597 1894 
+z
+M 3022 2063 
+Q 3016 2534 2758 2815 
+Q 2500 3097 2075 3097 
+Q 1594 3097 1305 2825 
+Q 1016 2553 972 2059 
+L 3022 2063 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-73" d="M 2834 3397 
+L 2834 2853 
+Q 2591 2978 2328 3040 
+Q 2066 3103 1784 3103 
+Q 1356 3103 1142 2972 
+Q 928 2841 928 2578 
+Q 928 2378 1081 2264 
+Q 1234 2150 1697 2047 
+L 1894 2003 
+Q 2506 1872 2764 1633 
+Q 3022 1394 3022 966 
+Q 3022 478 2636 193 
+Q 2250 -91 1575 -91 
+Q 1294 -91 989 -36 
+Q 684 19 347 128 
+L 347 722 
+Q 666 556 975 473 
+Q 1284 391 1588 391 
+Q 1994 391 2212 530 
+Q 2431 669 2431 922 
+Q 2431 1156 2273 1281 
+Q 2116 1406 1581 1522 
+L 1381 1569 
+Q 847 1681 609 1914 
+Q 372 2147 372 2553 
+Q 372 3047 722 3315 
+Q 1072 3584 1716 3584 
+Q 2034 3584 2315 3537 
+Q 2597 3491 2834 3397 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-75" d="M 544 1381 
+L 544 3500 
+L 1119 3500 
+L 1119 1403 
+Q 1119 906 1312 657 
+Q 1506 409 1894 409 
+Q 2359 409 2629 706 
+Q 2900 1003 2900 1516 
+L 2900 3500 
+L 3475 3500 
+L 3475 0 
+L 2900 0 
+L 2900 538 
+Q 2691 219 2414 64 
+Q 2138 -91 1772 -91 
+Q 1169 -91 856 284 
+Q 544 659 544 1381 
+z
+M 1991 3584 
+L 1991 3584 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-6d" d="M 3328 2828 
+Q 3544 3216 3844 3400 
+Q 4144 3584 4550 3584 
+Q 5097 3584 5394 3201 
+Q 5691 2819 5691 2113 
+L 5691 0 
+L 5113 0 
+L 5113 2094 
+Q 5113 2597 4934 2840 
+Q 4756 3084 4391 3084 
+Q 3944 3084 3684 2787 
+Q 3425 2491 3425 1978 
+L 3425 0 
+L 2847 0 
+L 2847 2094 
+Q 2847 2600 2669 2842 
+Q 2491 3084 2119 3084 
+Q 1678 3084 1418 2786 
+Q 1159 2488 1159 1978 
+L 1159 0 
+L 581 0 
+L 581 3500 
+L 1159 3500 
+L 1159 2956 
+Q 1356 3278 1631 3431 
+Q 1906 3584 2284 3584 
+Q 2666 3584 2933 3390 
+Q 3200 3197 3328 2828 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#DejaVuSans-48"/>
+     <use xlink:href="#DejaVuSans-54" x="75.195312"/>
+     <use xlink:href="#DejaVuSans-4d" x="136.279297"/>
+     <use xlink:href="#DejaVuSans-4c" x="222.558594"/>
+     <use xlink:href="#DejaVuSans-20" x="278.271484"/>
+     <use xlink:href="#DejaVuSans-52" x="310.058594"/>
+     <use xlink:href="#DejaVuSans-65" x="375.041016"/>
+     <use xlink:href="#DejaVuSans-73" x="436.564453"/>
+     <use xlink:href="#DejaVuSans-75" x="488.664062"/>
+     <use xlink:href="#DejaVuSans-6d" x="552.042969"/>
+     <use xlink:href="#DejaVuSans-65" x="649.455078"/>
+    </g>
    </g>
    <g id="text_2">
     <!-- Senior Java Developer -->
@@ -492,175 +538,3 @@ z
   </clipPath>
  </defs>
 </svg>
-    </header>
-    <div class="container">
-        <section id="about">
-            <h2>درباره من</h2>
-            <p>من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم.</p>
-            <p>کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم.</p>
-            <p>به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.</p>
-        </section>
-
-        <section id="skills">
-            <h2>مهارت‌های تخصصی</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>زبان‌ها و فریم‌ورک‌ها</h3>
-                    <ul>
-                        <li><i class="fas fa-code"></i> Java Core, Reactive, Functional</li>
-                        <li><i class="fas fa-leaf"></i> Spring Framework Boot, Cloud, Security, Data</li>
-                        <li><i class="fas fa-database"></i> Hibernate / JPA</li>
-                        <li><i class="fas fa-plug"></i> RESTful API Development</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>معماری نرم‌افزار و زیرساخت</h3>
-                    <ul>
-                        <li><i class="fas fa-sitemap"></i> Microservices Architecture</li>
-                        <li><i class="fas fa-bolt"></i> Reactive Programming</li>
-                        <li><i class="fas fa-cloud"></i> Cloud-Native Design</li>
-                        <li><i class="fas fa-envelope"></i> Message-Driven Systems RabbitMQ</li>
-                        <li><i class="fas fa-lock"></i> Keycloak & JWT Authentication</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>ابزارها و فناوری‌های توسعه</h3>
-                    <ul>
-                        <li><i class="fab fa-git-alt"></i> Git، GitHub، GitLab</li>
-                        <li><i class="fas fa-tasks"></i> Jira، Scrum، Agile Methodologies</li>
-                        <li><i class="fab fa-docker"></i> Docker و مفاهیم DevOps</li>
-                        <li><i class="fas fa-cogs"></i> CI/CD اصولی و اتوماسیون Build</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>پایگاه داده‌ها</h3>
-                    <ul>
-                        <li><i class="fas fa-database"></i> MySQL، PostgreSQL، Oracle</li>
-                        <li><i class="fas fa-search"></i> SQL Optimization و طراحی اسکیمای منطقی</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>فرانت‌اند</h3>
-                    <ul>
-                        <li><i class="fab fa-angular"></i> Angular، TypeScript</li>
-                        <li><i class="fab fa-html5"></i> HTML5، CSS3، Bootstrap</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>سوابق تحصیلی</h2>
-            <p><strong>کارشناسی مهندسی هوافضا</strong> - دانشگاه آزاد اسلامی واحد نجف‌آباد - 📅 مهر ۱۳۹۱ – خرداد ۱۳۹۶</p>
-        </section>
-
-        <section id="experience">
-            <h2>سوابق حرفه‌ای</h2>
-            <div class="experience-item">
-                <h3>توسعه‌دهنده فول‌استک جاوا | شرکت خصوصی فناوری اطلاعات</h3>
-                <p>📅 ۱۴۰۱ – ۱۴۰۴</p>
-                <p>پروژه: توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه‌</p>
-                <p>شرح پروژه: طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، محاسبه‌ی حق بیمه و صدور و مدیریت کاربران و …در سازمان‌های بیمه‌گر بزرگ.</p>
-                <ul>
-                    <li>توسعه‌ی بک‌اند با استفاده از Spring Framework، Hibernate و Oracle Database</li>
-                    <li>طراحی و توسعه‌ی رابط کاربری با JSP و Kendo UI</li>
-                    <li>استفاده از فریم‌ورک داخلی شرکت جهت توسعه‌ی ماژول‌های اختصاصی</li>
-                    <li>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها</li>
-                    <li>استفاده از Jira برای مدیریت وظایف و GitLab جهت کنترل نسخه</li>
-                    <li>توسعه و نگه‌داری در محیط Agile / Scrum</li>
-                    <li>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Framework</span>
-                    <span class="tech-tag">Hibernate</span>
-                    <span class="tech-tag">JSP</span>
-                    <span class="tech-tag">Kendo UI</span>
-                    <span class="tech-tag">Oracle DB</span>
-                    <span class="tech-tag">GitLab</span>
-                    <span class="tech-tag">Jira</span>
-                    <span class="tech-tag">Agile</span>
-                    <span class="tech-tag">IntelliJ IDEA</span>
-                </div>
-            </div>
-            <div class="experience-item">
-                <h3>توسعه‌ی سیستم مدیریت بایگانی و اسناد نمایشگاه اتوبوس بین‌شهری</h3>
-                <p>📅 ۱۳۹۶ – ۱۴۰۰</p>
-                <p>شرح پروژه: طراحی و پیاده‌سازی یک سیستم جامع برای مدیریت بایگانی، اسناد و تصاویر مرتبط با نمایشگاه فروش اتوبوس بین‌شهری.</p>
-                <ul>
-                    <li>طراحی پایگاه داده و لایه‌ی بک‌اند با Spring Framework و Hibernate</li>
-                    <li>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها</li>
-                    <li>توسعه‌ی رابط کاربری با Angular، HTML/CSS و Bootstrap</li>
-                    <li>پیاده‌سازی سیستم احراز هویت ایمن با Keycloak و JWT</li>
-                    <li>طراحی و اعتبارسنجی فرم‌های پویا برای ورود و ویرایش داده‌ها</li>
-                    <li>ایجاد ماژول گالری و فایل‌منیجر برای مدیریت اسناد</li>
-                    <li>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring</span>
-                    <span class="tech-tag">Hibernate</span>
-                    <span class="tech-tag">Angular</span>
-                    <span class="tech-tag">Keycloak</span>
-                    <span class="tech-tag">JWT</span>
-                    <span class="tech-tag">Postgresql</span>
-                </div>
-            </div>
-            <div class="experience-item">
-                <h3>پروژه تحقیقاتی: سیستم پیش‌بینی مالی مبتنی بر هوش مصنوعی</h3>
-                <p>📅 ۱۳۹۹ – تاکنون</p>
-                <p>همکاری با: سروش نجفی (دکترای برق – University of Nevada, Reno)</p>
-                <p>شرح پروژه: طراحی و پیاده‌سازی سامانه‌ی هوشمند پیش‌بینی روند بازار سهام با استفاده از مدل‌های تحلیلی و شبکه‌های عصبی.</p>
-                <ul>
-                    <li>طراحی بک‌اند با Spring Framework و ارتباطات بین سرویس‌ها با RabbitMQ</li>
-                    <li>طراحی پایگاه داده Mysql ,Oracle</li>
-                    <li>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها</li>
-                    <li>پیاده‌سازی الگوریتم‌های تحلیلی جهت محاسبه اندیکاتورهای مالی</li>
-                    <li>توسعه‌ی ربات تلگرامی برای ارسال پیش‌بینی‌ها به گروه‌های کاربری</li>
-                    <li>استفاده از Docker جهت استقرار و ایزوله‌سازی اجزای سیستم</li>
-                    <li>همکاری با ماژول هوش مصنوعی برای تحلیل داده‌ها</li>
-                    <li>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Hibernate</span>
-                    <span class="tech-tag">RabbitMQ</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">Angular</span>
-                    <span class="tech-tag">AI Integration</span>
-                    <span class="tech-tag">Keycloak</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="personality">
-            <h2>ویژگی‌های شخصیتی و حرفه‌ای</h2>
-            <ul>
-                <li>تیپ شخصیتی INTJ – معمار (The Architect) بر اساس آزمون MBTI</li>
-                <li>تفکر تحلیلی، راهبردی و آینده‌نگر</li>
-                <li>تمرکز بالا بر بهینه‌سازی، ساختار و امنیت نرم‌افزار</li>
-                <li>خودآموز، منظم و متعهد به یادگیری مداوم</li>
-                <li>علاقه‌مند به همکاری در محیط‌های چابک و پروژه‌های تحقیق‌محور</li>
-            </ul>
-        </section>
-
-        <section id="languages">
-            <h2>زبان‌ها</h2>
-            <div class="languages">
-                <p><strong>فارسی</strong> (زبان مادری)</p>
-                <p><strong>انگلیسی</strong> (سطح متوسط – خواندن و نوشتن فنی روان)</p>
-            </div>
-        </section>
-
-        <section id="interests">
-            <h2>علایق شخصی</h2>
-            <div class="interests">
-                <p>تحلیل بازارهای مالی و داده‌های پیچیده</p>
-                <p>مطالعه درباره معماری نرم‌افزار و سیستم‌های توزیع شده</p>
-                <p>طراحی سازه‌های پرنده و مطالعه در حوزه آیرودینامیک</p>
-            </div>
-        </section>
-    </div>
-</body>
-</html>
