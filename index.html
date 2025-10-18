@@ -7,13 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #e6e6fa);
+            color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         .english { font-family: 'Arial', sans-serif; direction: ltr; text-align: left; }
         .container {
@@ -24,21 +28,22 @@
         header {
             background: linear-gradient(135deg, #6a1b9a, #ab47bc);
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
             border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease-in;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
         }
         .header-title {
-            font-size: 2.5em;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             margin: 10px 0;
         }
         .typing {
             overflow: hidden;
             white-space: nowrap;
             border-right: 3px solid white;
-            animation: typing 4s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+            animation: typing 4s steps(40, end) 1, blink-caret 0.75s step-end 4;
         }
         @keyframes typing {
             from { width: 0; }
@@ -49,23 +54,43 @@
             50% { border-color: white; }
         }
         .contact-info {
-            font-size: 1.2em;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
         .contact-info i {
-            margin-left: 10px;
-            animation: iconBounce 1s infinite alternate;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
         }
-        @keyframes iconBounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-5px); }
+        .contact-info i:hover {
+            transform: translateY(-3px);
+        }
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #6a1b9a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .lang-switch:hover {
+            background: #ab47bc;
+            transform: scale(1.05);
         }
         section {
             margin: 40px 0;
             padding: 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             animation: slideUp 0.5s ease-in;
         }
         @keyframes slideUp {
@@ -79,64 +104,63 @@
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
         }
         h2 i { margin-left: 10px; }
-        .skill-group {
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: space-between;
         }
         .skill-card {
+            flex: 1 1 18%;
+            min-width: 180px;
             background: #f3e5f5;
-            border-radius: 10px;
             padding: 15px;
-            width: 18%;
+            border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .skill-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .skill-card i {
-            font-size: 2em;
-            color: #6a1b9a;
-            margin-bottom: 10px;
-            animation: iconPulse 1.5s infinite;
-        }
-        @keyframes iconPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .skill-card h3 {
-            color: #ab47bc;
-            font-size: 1.2em;
-            margin: 10px 0;
+            color: #6a1b9a;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
         .skill-card ul {
             list-style: none;
             padding: 0;
         }
         .skill-card li {
-            margin: 5px 0;
-            font-size: 0.9em;
-            color: #333;
+            margin: 8px 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
         }
         .project-card {
             background: #f3e5f5;
-            border-radius: 10px;
             padding: 20px;
+            border-radius: 10px;
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .project-card h3 {
-            color: #6a1b9a;
+            color: #ab47bc;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
         .tech-chips {
@@ -146,17 +170,18 @@
             margin-top: 10px;
         }
         .tech-chip {
-            background: #ab47bc;
+            background: #6a1b9a;
             color: white;
             padding: 5px 10px;
             border-radius: 15px;
-            font-size: 0.9em;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 5px;
+            transition: background 0.3s;
         }
-        .tech-chip i {
-            font-size: 0.8em;
+        .tech-chip:hover {
+            background: #ab47bc;
         }
         ul {
             list-style: none;
@@ -165,7 +190,7 @@
         li {
             margin: 10px 0;
             position: relative;
-            padding-right: 30px;
+            padding-right: 25px;
         }
         li::before {
             content: '\f058';
@@ -175,25 +200,34 @@
             position: absolute;
             right: 0;
         }
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #6a1b9a;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: background 0.3s;
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .skill-card {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .header-title {
+                font-size: 1.8rem;
+            }
         }
-        .lang-switch:hover {
-            background: #ab47bc;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            section {
+                padding: 15px;
+            }
+            .lang-switch {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -203,70 +237,61 @@
         <div class="header-title persian typing">اسماعیل جلیلی 💻 توسعه‌دهنده ارشد جاوا</div>
         <div class="header-title english typing" style="display: none;">Esmaeel Jalili 💻 Senior Java Developer</div>
         <div class="contact-info">
-            <span><i class="fas fa-map-marker-alt"></i> Isfahan</span> |
-            <span><i class="fas fa-envelope"></i> esmaeel.jalili@example.com</span> |
+            <span><i class="fas fa-map-marker-alt"></i> Isfahan</span>
+            <span><i class="fas fa-envelope"></i> esmaeel.jalili@example.com</span>
             <span><i class="fas fa-phone"></i> +98 910 119 3203</span>
         </div>
     </header>
     <div class="container">
         <section id="about">
             <h2><i class="fas fa-user"></i> <span class="persian">درباره من</span><span class="english" style="display: none;">About Me</span></h2>
-            <p class="persian">من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم.
-کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم.
-به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.</p>
-            <p class="english" style="display: none;">I am Esmaeel Jalili Paydar, born on March 28, 1372 (March 19, 1994), a self-taught and energetic developer with over 10 years of professional experience in designing, implementing, and developing systems based on Java and technologies such as Spring Framework, Reactive Programming, and Microservices.
-My deep curiosity about how computer systems work led me to enter the world of programming during my teenage years. Despite limited educational resources in Iran, I pursued my learning path self-taught and acquired specialized skills in developing enterprise software and complex systems.
-As an individual with an INTJ personality type (Architect), I have an analytical, logical, and goal-oriented approach to solving complex problems and enjoy learning and creating optimized systems.</p>
+            <p class="persian">من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم. کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم. به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.</p>
+            <p class="english" style="display: none;">I am Esmaeel Jalili Paydar, born on March 28, 1372 (March 19, 1994), a self-taught and energetic developer with over 10 years of professional experience in designing, implementing, and developing systems based on Java and technologies such as Spring Framework, Reactive Programming, and Microservices. My deep curiosity about how computer systems work led me to enter the world of programming during my teenage years. Despite limited educational resources in Iran, I pursued my learning path self-taught and acquired specialized skills in developing enterprise software and complex systems. As an individual with an INTJ personality type (Architect), I have an analytical, logical, and goal-oriented approach to solving complex problems and enjoy learning and creating optimized systems.</p>
         </section>
 
         <section id="skills">
             <h2><i class="fas fa-tools"></i> <span class="persian">مهارت‌های تخصصی</span><span class="english" style="display: none;">Technical Skills</span></h2>
-            <div class="skill-group">
+            <div class="skills-container">
                 <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3><span class="persian">زبان‌ها و فریم‌ورک‌ها</span><span class="english" style="display: none;">Languages and Frameworks</span></h3>
+                    <h3><i class="fas fa-code"></i> <span class="persian">زبان‌ها و فریم‌ورک‌ها</span><span class="english" style="display: none;">Languages and Frameworks</span></h3>
                     <ul>
-                        <li>Java Core, Reactive, Functional</li>
-                        <li>Spring Framework Boot, Cloud, Security, Data</li>
-                        <li>Hibernate / JPA</li>
-                        <li>RESTful API Development</li>
+                        <li><i class="fab fa-java"></i> Java Core, Reactive, Functional</li>
+                        <li><i class="fas fa-leaf"></i> Spring Framework Boot, Cloud, Security, Data</li>
+                        <li><i class="fas fa-database"></i> Hibernate / JPA</li>
+                        <li><i class="fas fa-link"></i> RESTful API Development</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h3><span class="persian">معماری نرم‌افزار</span><span class="english" style="display: none;">Software Architecture</span></h3>
+                    <h3><i class="fas fa-puzzle-piece"></i> <span class="persian">معماری نرم‌افزار و زیرساخت</span><span class="english" style="display: none;">Software Architecture and Infrastructure</span></h3>
                     <ul>
-                        <li>Microservices Architecture</li>
-                        <li>Reactive Programming</li>
-                        <li>Cloud-Native Design</li>
-                        <li>Message-Driven Systems RabbitMQ</li>
-                        <li>Keycloak & JWT Authentication</li>
+                        <li><i class="fas fa-cubes"></i> Microservices Architecture</li>
+                        <li><i class="fas fa-bolt"></i> Reactive Programming</li>
+                        <li><i class="fas fa-cloud"></i> Cloud-Native Design</li>
+                        <li><i class="fas fa-envelope"></i> Message-Driven Systems RabbitMQ</li>
+                        <li><i class="fas fa-lock"></i> Keycloak & JWT Authentication</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-wrench"></i>
-                    <h3><span class="persian">ابزارهای توسعه</span><span class="english" style="display: none;">Development Tools</span></h3>
+                    <h3><i class="fas fa-wrench"></i> <span class="persian">ابزارها و فناوری‌های توسعه</span><span class="english" style="display: none;">Development Tools and Technologies</span></h3>
                     <ul>
-                        <li>Git, GitHub, GitLab</li>
-                        <li>Jira, Scrum, Agile</li>
-                        <li>Docker, DevOps</li>
-                        <li>CI/CD Automation</li>
+                        <li><i class="fab fa-git-alt"></i> Git, GitHub, GitLab</li>
+                        <li><i class="fab fa-jira"></i> Jira, Scrum, Agile Methodologies</li>
+                        <li><i class="fab fa-docker"></i> Docker و مفاهیم DevOps</li>
+                        <li><i class="fas fa-cogs"></i> CI/CD اصولی و اتوماسیون Build</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3><span class="persian">پایگاه داده‌ها</span><span class="english" style="display: none;">Databases</span></h3>
+                    <h3><i class="fas fa-database"></i> <span class="persian">پایگاه داده‌ها</span><span class="english" style="display: none;">Databases</span></h3>
                     <ul>
-                        <li>MySQL, PostgreSQL, Oracle</li>
-                        <li>SQL Optimization</li>
+                        <li><i class="fas fa-server"></i> MySQL, PostgreSQL, Oracle</li>
+                        <li><i class="fas fa-tachometer-alt"></i> SQL Optimization و طراحی اسکیمای منطقی</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3><span class="persian">فرانت‌اند</span><span class="english" style="display: none;">Front-End</span></h3>
+                    <h3><i class="fas fa-paint-brush"></i> <span class="persian">فرانت‌اند</span><span class="english" style="display: none;">Front-End</span></h3>
                     <ul>
-                        <li>Angular, TypeScript</li>
-                        <li>HTML5, CSS3, Bootstrap</li>
+                        <li><i class="fab fa-angular"></i> Angular, TypeScript</li>
+                        <li><i class="fab fa-html5"></i> HTML5, CSS3, Bootstrap</li>
                     </ul>
                 </div>
             </div>
@@ -281,19 +306,19 @@ As an individual with an INTJ personality type (Architect), I have an analytical
             <h2><i class="fas fa-briefcase"></i> <span class="persian">سوابق حرفه‌ای</span><span class="english" style="display: none;">Professional Experience</span></h2>
             <div class="project-card">
                 <h3><span class="persian">توسعه‌دهنده فول‌استک جاوا | شرکت خصوصی فناوری اطلاعات 📅 ۱۴۰۱ – ۱۴۰۴</span><span class="english" style="display: none;">Full-Stack Java Developer | Private IT Company 📅 2022 – 2025</span></h3>
-                <p class="persian">پروژه: توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه<br>شرح پروژه:<br>طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، محاسبه‌ی حق بیمه و صدور و مدیریت کاربران در سازمان‌های بیمه‌گر بزرگ.<br>توسعه‌ی بک‌اند با استفاده از Spring Framework، Hibernate و Oracle Database<br>طراحی و توسعه‌ی رابط کاربری با JSP و Kendo UI<br>استفاده از فریم‌ورک داخلی شرکت جهت توسعه‌ی ماژول‌های اختصاصی<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>استفاده از Jira برای مدیریت وظایف و GitLab جهت کنترل نسخه<br>توسعه و نگه‌داری در محیط Agile / Scrum<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</p>
+                <p class="persian">پروژه: توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه‌<br>شرح پروژه:<br>طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، محاسبه‌ی حق بیمه و صدور و مدیریت کاربران و …در سازمان‌های بیمه‌گر بزرگ.<br>توسعه‌ی بک‌اند با استفاده از Spring Framework، Hibernate و Oracle Database<br>طراحی و توسعه‌ی رابط کاربری با JSP و Kendo UI<br>استفاده از فریم‌ورک داخلی شرکت جهت توسعه‌ی ماژول‌های اختصاصی<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>استفاده از Jira برای مدیریت وظایف و GitLab جهت کنترل نسخه<br>توسعه و نگه‌داری در محیط Agile / Scrum<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</p>
                 <p class="english" style="display: none;">Project: Development of Enterprise Application for Insurance Companies<br>Description:<br>Design and development of a comprehensive organizational system for managing insurance processes including registration, inquiry, premium calculation, issuance, and user management in large insurance organizations.<br>Back-end development using Spring Framework, Hibernate, and Oracle Database<br>UI design and development with JSP and Kendo UI<br>Using the company's internal framework for developing custom modules<br>Implementing service layer and data model for effective communication between modules<br>Using Jira for task management and GitLab for version control<br>Development and maintenance in Agile / Scrum environment<br>Using IntelliJ IDEA for development and Maven for project build</p>
                 <div class="tech-chips">
-                    <span class="tech-chip"><i class="fas fa-code"></i> Java</span>
+                    <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
                     <span class="tech-chip"><i class="fas fa-leaf"></i> Spring Framework</span>
                     <span class="tech-chip"><i class="fas fa-database"></i> Hibernate</span>
-                    <span class="tech-chip"><i class="fas fa-desktop"></i> JSP</span>
+                    <span class="tech-chip"><i class="fas fa-code"></i> JSP</span>
                     <span class="tech-chip"><i class="fas fa-paint-brush"></i> Kendo UI</span>
                     <span class="tech-chip"><i class="fas fa-database"></i> Oracle DB</span>
-                    <span class="tech-chip"><i class="fas fa-code-branch"></i> GitLab</span>
-                    <span class="tech-chip"><i class="fas fa-tasks"></i> Jira</span>
+                    <span class="tech-chip"><i class="fab fa-gitlab"></i> GitLab</span>
+                    <span class="tech-chip"><i class="fab fa-jira"></i> Jira</span>
                     <span class="tech-chip"><i class="fas fa-cogs"></i> Agile</span>
-                    <span class="tech-chip"><i class="fas fa-code"></i> IntelliJ IDEA</span>
+                    <span class="tech-chip"><i class="fas fa-tools"></i> IntelliJ IDEA</span>
                 </div>
             </div>
             <div class="project-card">
@@ -301,10 +326,10 @@ As an individual with an INTJ personality type (Architect), I have an analytical
                 <p class="persian">شرح پروژه:<br>طراحی و پیاده‌سازی یک سیستم جامع برای مدیریت بایگانی، اسناد و تصاویر مرتبط با نمایشگاه فروش اتوبوس بین‌شهری.<br>طراحی پایگاه داده و لایه‌ی بک‌اند با Spring Framework و Hibernate<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>توسعه‌ی رابط کاربری با Angular، HTML/CSS و Bootstrap<br>پیاده‌سازی سیستم احراز هویت ایمن با Keycloak و JWT<br>طراحی و اعتبارسنجی فرم‌های پویا برای ورود و ویرایش داده‌ها<br>ایجاد ماژول گالری و فایل‌منیجر برای مدیریت اسناد<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</p>
                 <p class="english" style="display: none;">Description:<br>Design and implementation of a comprehensive system for managing archives, documents, and images related to the intercity bus sales exhibition.<br>Database design and back-end layer with Spring Framework and Hibernate<br>Implementing service layer and data model for effective communication between modules<br>UI development with Angular, HTML/CSS, and Bootstrap<br>Implementing secure authentication system with Keycloak and JWT<br>Design and validation of dynamic forms for data entry and editing<br>Creating gallery and file manager module for document management<br>Using IntelliJ IDEA for development and Maven for project build</p>
                 <div class="tech-chips">
-                    <span class="tech-chip"><i class="fas fa-code"></i> Java</span>
+                    <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
                     <span class="tech-chip"><i class="fas fa-leaf"></i> Spring</span>
                     <span class="tech-chip"><i class="fas fa-database"></i> Hibernate</span>
-                    <span class="tech-chip"><i class="fas fa-desktop"></i> Angular</span>
+                    <span class="tech-chip"><i class="fab fa-angular"></i> Angular</span>
                     <span class="tech-chip"><i class="fas fa-lock"></i> Keycloak</span>
                     <span class="tech-chip"><i class="fas fa-key"></i> JWT</span>
                     <span class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</span>
@@ -312,16 +337,16 @@ As an individual with an INTJ personality type (Architect), I have an analytical
             </div>
             <div class="project-card">
                 <h3><span class="persian">پروژه تحقیقاتی: سیستم پیش‌بینی مالی مبتنی بر هوش مصنوعی 📅 ۱۳۹۹ – تاکنون</span><span class="english" style="display: none;">Research Project: AI-Based Financial Prediction System 📅 2020 – Present</span></h3>
-                <p class="persian">همکاری با: سروش نجفی (دکترای برق – University of Nevada, Reno)<br>شرح پروژه:<br>طراحی و پیاده‌سازی سامانه‌ی هوشمند پیش‌بینی روند بازار سهام با استفاده از مدل‌های تحلیلی و شبکه‌های عصبی.<br>طراحی بک‌اند با Spring Framework و ارتباطات بین سرویس‌ها با RabbitMQ<br>طراحی پایگاه داده MySQL, Oracle<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>پیاده‌سازی الگوریتم‌های تحلیلی جهت محاسبه اندیکاتورهای مالی<br>توسعه‌ی ربات تلگرامی برای ارسال پیش‌بینی‌ها به گروه‌های کاربری<br>استفاده از Docker جهت استقرار و ایزوله‌سازی اجزای سیستم<br>همکاری با ماژول هوش مصنوعی برای تحلیل داده‌ها<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</p>
+                <p class="persian">همکاری با: سروش نجفی (دکترای برق – University of Nevada, Reno)<br>شرح پروژه:<br>طراحی و پیاده‌سازی سامانه‌ی هوشمند پیش‌بینی روند بازار سهام با استفاده از مدل‌های تحلیلی و شبکه‌های عصبی.<br>طراحی بک‌اند با Spring Framework و ارتباطات بین سرویس‌ها با RabbitMQ<br>طراحی پایگاه داده Mysql ,Oracle<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>پیاده‌سازی الگوریتم‌های تحلیلی جهت محاسبه اندیکاتورهای مالی<br>توسعه‌ی ربات تلگرامی برای ارسال پیش‌بینی‌ها به گروه‌های کاربری<br>استفاده از Docker جهت استقرار و ایزوله‌سازی اجزای سیستم<br>همکاری با ماژول هوش مصنوعی برای تحلیل داده‌ها<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</p>
                 <p class="english" style="display: none;">Collaboration with: Soroush Najafi (PhD in Electrical Engineering – University of Nevada, Reno)<br>Description:<br>Design and implementation of an intelligent system for predicting stock market trends using analytical models and neural networks.<br>Back-end design with Spring Framework and inter-service communications with RabbitMQ<br>Database design with MySQL, Oracle<br>Implementing service layer and data model for effective communication between modules<br>Implementing analytical algorithms for calculating financial indicators<br>Development of Telegram bot for sending predictions to user groups<br>Using Docker for deployment and isolation of system components<br>Collaboration with AI module for data analysis<br>Using IntelliJ IDEA for development and Maven for project build</p>
                 <div class="tech-chips">
-                    <span class="tech-chip"><i class="fas fa-code"></i> Java</span>
+                    <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
                     <span class="tech-chip"><i class="fas fa-leaf"></i> Spring Boot</span>
                     <span class="tech-chip"><i class="fas fa-database"></i> Hibernate</span>
-                    <span class="tech-chip"><i class="fas fa-bolt"></i> RabbitMQ</span>
-                    <span class="tech-chip"><i class="fas fa-box"></i> Docker</span>
-                    <span class="tech-chip"><i class="fas fa-desktop"></i> Angular</span>
-                    <span class="tech-chip"><i class="fas fa-brain"></i> AI Integration</span>
+                    <span class="tech-chip"><i class="fas fa-envelope"></i> RabbitMQ</span>
+                    <span class="tech-chip"><i class="fab fa-docker"></i> Docker</span>
+                    <span class="tech-chip"><i class="fab fa-angular"></i> Angular</span>
+                    <span class="tech-chip"><i class="fas fa-robot"></i> AI Integration</span>
                     <span class="tech-chip"><i class="fas fa-lock"></i> Keycloak</span>
                 </div>
             </div>
@@ -374,10 +399,27 @@ As an individual with an INTJ personality type (Architect), I have an analytical
             document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
             document.querySelectorAll('.persian').forEach(el => {
                 el.style.display = isEnglish ? 'none' : 'block';
+                if (el.classList.contains('typing')) {
+                    el.classList.remove('typing');
+                    void el.offsetWidth; // Trigger reflow to restart animation
+                    el.classList.add('typing');
+                }
             });
             document.querySelectorAll('.english').forEach(el => {
                 el.style.display = isEnglish ? 'block' : 'none';
+                if (el.classList.contains('typing')) {
+                    el.classList.remove('typing');
+                    void el.offsetWidth; // Trigger reflow to restart animation
+                    el.classList.add('typing');
+                }
             });
             document.querySelector('.lang-switch').textContent = isEnglish ? 'فارسی / English' : 'English / فارسی';
         }
+
+        // Trigger typing animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.typing').forEach(el => {
+                el.classList.add('typing');
+            });
+        });
     </script>
