@@ -1,154 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esmaeel Jalili - Senior Java Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f3e5f5; /* Light purple background */
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f9f9f9;
             color: #333;
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
-        header {
-            background-color: #6a1b9a; /* Dark purple */
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-        }
-        .header-svg {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 1rem;
-        }
-        .contact-info {
-            font-size: 1.1rem;
-            margin-top: 1rem;
-        }
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid orange;
-            white-space: nowrap;
+        .english { font-family: 'Arial', sans-serif; direction: ltr; text-align: left; }
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        .header-title {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid white;
+            animation: typing 4s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
         }
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            from { width: 0; }
+            to { width: 100%; }
         }
         @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange; }
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
         }
-        nav {
-            background-color: #ab47bc; /* Medium purple */
-            padding: 1rem;
-            text-align: center;
+        .contact-info {
+            font-size: 1.2em;
+            margin-top: 20px;
         }
-        select {
-            padding: 0.5rem;
-            font-size: 1rem;
-            background-color: #f3e5f5;
-            border: 1px solid #6a1b9a;
-            border-radius: 5px;
-            cursor: pointer;
+        .contact-info i {
+            margin-left: 10px;
+            animation: iconBounce 1s infinite alternate;
+        }
+        @keyframes iconBounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
         }
         section {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            animation: slideUp 0.5s ease-in;
         }
-        .bilingual {
-            display: flex;
-            justify-content: space-between;
-        }
-        .lang-en, .lang-fa {
-            width: 48%;
-        }
-        .lang-fa {
-            direction: rtl;
-            text-align: right;
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         h2 {
             color: #6a1b9a;
+            border-bottom: 2px solid #ab47bc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
+        h2 i { margin-left: 10px; }
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
         li {
-            margin-bottom: 0.5rem;
+            margin: 10px 0;
+            position: relative;
+            padding-right: 30px;
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+        li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #6a1b9a;
+            position: absolute;
+            right: 0;
         }
-        footer {
-            background-color: #6a1b9a;
+        .project {
+            margin-bottom: 30px;
+        }
+        .project h3 {
+            color: #ab47bc;
+        }
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #6a1b9a;
             color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+        .lang-switch:hover {
+            background: #ab47bc;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <div class="lang-switch" onclick="toggleLanguage()">English / فارسی</div>
     <header>
-        <!-- Placeholder SVG for header (since no file provided, a simple purple circle) -->
-        <svg class="header-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="40" stroke="#ab47bc" stroke-width="4" fill="#6a1b9a" />
-            <text x="50" y="55" font-size="20" text-anchor="middle" fill="white">EJ</text>
-        </svg>
-        <h1>Esmaeel Jalili - اسماعیل جلیلی</h1>
-        <h2 class="typewriter">💻 Senior Java Developer - توسعه‌دهنده ارشد جاوا</h2>
+        <div class="header-title persian typing">اسماعیل جلیلی 💻 توسعه‌دهنده ارشد جاوا</div>
+        <div class="header-title english typing" style="display: none;">Esmaeel Jalili 💻 Senior Java Developer</div>
         <div class="contact-info">
-            📍 Isfahan &nbsp; 📧 Esmaeel jalili &nbsp; 📞 +98 910 119 3203
+            <span>📍 Isfahan</span> |
+            <span>📧 esmaeel.jalili@example.com</span> |
+            <span>📞 +98 910 119 3203</span>
         </div>
     </header>
+    <div class="container">
+        <section id="about">
+            <h2><i class="fas fa-user"></i> <span class="persian">درباره من</span><span class="english" style="display: none;">About Me</span></h2>
+            <p class="persian">من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم.
+کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم.
+به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.</p>
+            <p class="english" style="display: none;">I am Esmaeel Jalili Paydar, born on March 28, 1372 (March 19, 1994), a self-taught and energetic developer with over 10 years of professional experience in designing, implementing, and developing systems based on Java and technologies such as Spring Framework, Reactive Programming, and Microservices.
+My deep curiosity about how computer systems work led me to enter the world of programming during my teenage years. Despite limited educational resources in Iran, I pursued my learning path self-taught and acquired specialized skills in developing enterprise software and complex systems.
+As an individual with an INTJ personality type (Architect), I have an analytical, logical, and goal-oriented approach to solving complex problems and enjoy learning and creating optimized systems.</p>
+        </section>
 
-    <nav>
-        <select onchange="if (this.value) window.location.hash=this.value">
-            <option value="">Navigate to Section...</option>
-            <option value="#about">About Me - درباره من</option>
-            <option value="#skills">Skills - مهارت‌های تخصصی</option>
-            <option value="#education">Education - سوابق تحصیلی</option>
-            <option value="#experience">Professional Experience - سوابق حرفه‌ای</option>
-            <option value="#personality">Personality Features - ویژگی‌های شخصیتی و حرفه‌ای</option>
-            <option value="#languages">Languages - زبان‌ها</option>
-            <option value="#interests">Personal Interests - علایق شخصی</option>
-        </select>
-    </nav>
-
-    <section id="about">
-        <h2>About Me - درباره من</h2>
-        <div class="bilingual">
-            <div class="lang-en">
-                <p>I, Esmaeel Jalili Paydar, born March 28, 1372 (March 19, 1994), am a self-taught and energetic developer with over 10 years of professional experience in designing, implementing, and developing systems based on Java and technologies like Spring Framework, Reactive Programming, and Microservices.</p>
-                <p>Deep curiosity about how computer systems work led me to enter the world of programming from adolescence. Despite limited educational resources in Iran, I pursued my learning path self-taught and was able to acquire specialized skills in the field of enterprise software development and complex systems.</p>
-                <p>As an individual with INTJ personality type (Architect), I have an analytical, logical, and goal-oriented approach in solving complex problems and enjoy learning and creating optimized systems.</p>
-            </div>
-            <div class="lang-fa">
-                <p>من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم.</p>
-                <p>کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم.</p>
-                <p>به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Skills - مهارت‌های تخصصی</h2>
-        <div class="skills-grid">
-            <div>
-                <h3>Languages and Frameworks - زبان‌ها و فریم‌ورک‌ها</h3>
+        <section id="skills">
+            <h2><i class="fas fa-tools"></i> <span class="persian">مهارت‌های تخصصی</span><span class="english" style="display: none;">Technical Skills</span></h2>
+            <div class="skill-group">
+                <h3><i class="fas fa-code"></i> <span class="persian">زبان‌ها و فریم‌ورک‌ها</span><span class="english" style="display: none;">Languages and Frameworks</span></h3>
                 <ul>
                     <li>Java Core, Reactive, Functional</li>
                     <li>Spring Framework Boot, Cloud, Security, Data</li>
@@ -156,8 +159,8 @@
                     <li>RESTful API Development</li>
                 </ul>
             </div>
-            <div>
-                <h3>Software Architecture and Infrastructure - معماری نرم‌افزار و زیرساخت</h3>
+            <div class="skill-group">
+                <h3><i class="fas fa-puzzle-piece"></i> <span class="persian">معماری نرم‌افزار و زیرساخت</span><span class="english" style="display: none;">Software Architecture and Infrastructure</span></h3>
                 <ul>
                     <li>Microservices Architecture</li>
                     <li>Reactive Programming</li>
@@ -166,206 +169,108 @@
                     <li>Keycloak & JWT Authentication</li>
                 </ul>
             </div>
-            <div>
-                <h3>Tools and Development Technologies - ابزارها و فناوری‌های توسعه</h3>
+            <div class="skill-group">
+                <h3><i class="fas fa-wrench"></i> <span class="persian">ابزارها و فناوری‌های توسعه</span><span class="english" style="display: none;">Development Tools and Technologies</span></h3>
                 <ul>
-                    <li>Git, GitHub, GitLab</li>
-                    <li>Jira, Scrum, Agile Methodologies</li>
-                    <li>Docker and DevOps concepts</li>
-                    <li>CI/CD principles and Build automation</li>
+                    <li>Git، GitHub، GitLab</li>
+                    <li>Jira، Scrum، Agile Methodologies</li>
+                    <li>Docker و مفاهیم DevOps</li>
+                    <li>CI/CD اصولی و اتوماسیون Build</li>
                 </ul>
             </div>
-            <div>
-                <h3>Databases - پایگاه داده‌ها</h3>
+            <div class="skill-group">
+                <h3><i class="fas fa-database"></i> <span class="persian">پایگاه داده‌ها</span><span class="english" style="display: none;">Databases</span></h3>
                 <ul>
-                    <li>MySQL, PostgreSQL, Oracle</li>
-                    <li>SQL Optimization and logical schema design</li>
+                    <li>MySQL، PostgreSQL، Oracle</li>
+                    <li>SQL Optimization و طراحی اسکیمای منطقی</li>
                 </ul>
             </div>
-            <div>
-                <h3>Front-end - فرانت‌اند</h3>
+            <div class="skill-group">
+                <h3><i class="fas fa-paint-brush"></i> <span class="persian">فرانت‌اند</span><span class="english" style="display: none;">Front-End</span></h3>
                 <ul>
-                    <li>Angular, TypeScript</li>
-                    <li>HTML5, CSS3, Bootstrap</li>
+                    <li>Angular، TypeScript</li>
+                    <li>HTML5، CSS3، Bootstrap</li>
                 </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education">
-        <h2>Education - سوابق تحصیلی</h2>
-        <div class="bilingual">
-            <div class="lang-en">
-                <p>Bachelor's in Aerospace Engineering - Islamic Azad University, Najafabad Branch - 📅 October 2011 – June 2016</p>
-            </div>
-            <div class="lang-fa">
-                <p>کارشناسی مهندسی هوافضا - دانشگاه آزاد اسلامی واحد نجف‌آباد - 📅 مهر ۱۳۹۱ – خرداد ۱۳۹۶</p>
-            </div>
-        </div>
-    </section>
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> <span class="persian">سوابق تحصیلی</span><span class="english" style="display: none;">Education</span></h2>
+            <p><span class="persian">کارشناسی مهندسی هوافضا - دانشگاه آزاد اسلامی واحد نجف‌آباد - 📅 مهر ۱۳۹۱ – خرداد ۱۳۹۶</span><span class="english" style="display: none;">Bachelor's in Aerospace Engineering - Islamic Azad University, Najafabad Branch - 📅 October 2012 – June 2017</span></p>
+        </section>
 
-    <section id="experience">
-        <h2>Professional Experience - سوابق حرفه‌ای</h2>
-        <div class="bilingual">
-            <div class="lang-en">
-                <h3>Full-Stack Java Developer | Private IT Company 📅 2022 – 2025</h3>
-                <p>Project: Development of enterprise application for insurance companies</p>
-                <p>Description:</p>
-                <ul>
-                    <li>Design and development of comprehensive enterprise system for managing insurance processes including registration, inquiry, premium calculation, issuance, user management, etc., in large insurance organizations.</li>
-                    <li>Back-end development using Spring Framework, Hibernate, and Oracle Database</li>
-                    <li>UI design and development with JSP and Kendo UI</li>
-                    <li>Using company's internal framework for developing custom modules</li>
-                    <li>Implementing service layer and data model for effective communication between modules</li>
-                    <li>Using Jira for task management and GitLab for version control</li>
-                    <li>Development and maintenance in Agile / Scrum environment</li>
-                    <li>Using IntelliJ IDEA for development and Maven for project build</li>
-                </ul>
-                <p>Technologies: Java | Spring Framework | Hibernate | JSP | Kendo UI | Oracle DB | GitLab | Jira | Agile | IntelliJ IDEA</p>
-
-                <h3>Development of Intercity Bus Exhibition Archive and Document Management System 📅 2017 – 2021</h3>
-                <p>Description:</p>
-                <ul>
-                    <li>Design and implementation of a comprehensive system for managing archive, documents, and images related to intercity bus sales exhibition.</li>
-                    <li>Database design and back-end layer with Spring Framework and Hibernate</li>
-                    <li>Implementing service layer and data model for effective communication between modules</li>
-                    <li>UI development with Angular, HTML/CSS, and Bootstrap</li>
-                    <li>Implementing secure authentication system with Keycloak and JWT</li>
-                    <li>Design and validation of dynamic forms for data entry and editing</li>
-                    <li>Creating gallery module and file manager for document management</li>
-                    <li>Using IntelliJ IDEA for development and Maven for project build</li>
-                </ul>
-                <p>Technologies: Java | Spring | Hibernate | Angular | Keycloak | JWT | PostgreSQL</p>
-
-                <h3>Research Project: AI-Based Financial Prediction System 📅 2020 – Present</h3>
-                <p>Collaboration with: Soroush Najafi (PhD in Electrical Engineering – University of Nevada, Reno)</p>
-                <p>Description:</p>
-                <ul>
-                    <li>Design and implementation of intelligent system for predicting stock market trends using analytical models and neural networks.</li>
-                    <li>Back-end design with Spring Framework and inter-service communications with RabbitMQ</li>
-                    <li>Database design MySQL, Oracle</li>
-                    <li>Implementing service layer and data model for effective communication between modules</li>
-                    <li>Implementing analytical algorithms for calculating financial indicators</li>
-                    <li>Development of Telegram bot for sending predictions to user groups</li>
-                    <li>Using Docker for deployment and isolation of system components</li>
-                    <li>Collaboration with AI module for data analysis</li>
-                    <li>Using IntelliJ IDEA for development and Maven for project build</li>
-                </ul>
-                <p>Technologies: Java | Spring Boot | Hibernate | RabbitMQ | Docker | Angular | AI Integration | Keycloak</p>
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> <span class="persian">سوابق حرفه‌ای</span><span class="english" style="display: none;">Professional Experience</span></h2>
+            <div class="project">
+                <h3><span class="persian">توسعه‌دهنده فول‌استک جاوا | شرکت خصوصی فناوری اطلاعات 📅 ۱۴۰۱ – ۱۴۰۴</span><span class="english" style="display: none;">Full-Stack Java Developer | Private IT Company 📅 2022 – 2025</span></h3>
+                <p class="persian">پروژه: توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه‌<br>شرح پروژه:<br>طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، محاسبه‌ی حق بیمه و صدور و مدیریت کاربران و …در سازمان‌های بیمه‌گر بزرگ.<br>توسعه‌ی بک‌اند با استفاده از Spring Framework، Hibernate و Oracle Database<br>طراحی و توسعه‌ی رابط کاربری با JSP و Kendo UI<br>استفاده از فریم‌ورک داخلی شرکت جهت توسعه‌ی ماژول‌های اختصاصی<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>استفاده از Jira برای مدیریت وظایف و GitLab جهت کنترل نسخه<br>توسعه و نگه‌داری در محیط Agile / Scrum<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه<br>فناوری‌ها: Java | Spring Framework | Hibernate | JSP | Kendo UI | Oracle DB | GitLab | Jira | Agile | IntelliJ IDEA</p>
+                <p class="english" style="display: none;">Project: Development of Enterprise Application for Insurance Companies<br>Description:<br>Design and development of a comprehensive organizational system for managing insurance processes including registration, inquiry, premium calculation, issuance, and user management in large insurance organizations.<br>Back-end development using Spring Framework, Hibernate, and Oracle Database<br>UI design and development with JSP and Kendo UI<br>Using the company's internal framework for developing custom modules<br>Implementing service layer and data model for effective communication between modules<br>Using Jira for task management and GitLab for version control<br>Development and maintenance in Agile / Scrum environment<br>Using IntelliJ IDEA for development and Maven for project build<br>Technologies: Java | Spring Framework | Hibernate | JSP | Kendo UI | Oracle DB | GitLab | Jira | Agile | IntelliJ IDEA</p>
             </div>
-            <div class="lang-fa">
-                <h3>توسعه‌دهنده فول‌استک جاوا | شرکت خصوصی فناوری اطلاعات 📅 ۱۴۰۱ – ۱۴۰۴</h3>
-                <p>پروژه: توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه‌</p>
-                <p>شرح پروژه:</p>
-                <ul>
-                    <li>طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، محاسبه‌ی حق بیمه و صدور و مدیریت کاربران و …در سازمان‌های بیمه‌گر بزرگ.</li>
-                    <li>توسعه‌ی بک‌اند با استفاده از Spring Framework، Hibernate و Oracle Database</li>
-                    <li>طراحی و توسعه‌ی رابط کاربری با JSP و Kendo UI</li>
-                    <li>استفاده از فریم‌ورک داخلی شرکت جهت توسعه‌ی ماژول‌های اختصاصی</li>
-                    <li>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها</li>
-                    <li>استفاده از Jira برای مدیریت وظایف و GitLab جهت کنترل نسخه</li>
-                    <li>توسعه و نگه‌داری در محیط Agile / Scrum</li>
-                    <li>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</li>
-                </ul>
-                <p>فناوری‌ها: Java | Spring Framework | Hibernate | JSP | Kendo UI | Oracle DB | GitLab | Jira | Agile | IntelliJ IDEA</p>
+            <div class="project">
+                <h3><span class="persian">توسعه‌ی سیستم مدیریت بایگانی و اسناد نمایشگاه اتوبوس بین‌شهری 📅 ۱۳۹۶ – ۱۴۰۰</span><span class="english" style="display: none;">Development of Archive and Document Management System for Intercity Bus Exhibition 📅 2017 – 2021</span></h3>
+                <p class="persian">شرح پروژه:<br>طراحی و پیاده‌سازی یک سیستم جامع برای مدیریت بایگانی، اسناد و تصاویر مرتبط با نمایشگاه فروش اتوبوس بین‌شهری.<br>طراحی پایگاه داده و لایه‌ی بک‌اند با Spring Framework و Hibernate<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>توسعه‌ی رابط کاربری با Angular، HTML/CSS و Bootstrap<br>پیاده‌سازی سیستم احراز هویت ایمن با Keycloak و JWT<br>طراحی و اعتبارسنجی فرم‌های پویا برای ورود و ویرایش داده‌ها<br>ایجاد ماژول گالری و فایل‌منیجر برای مدیریت اسناد<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه<br>فناوری‌ها: Java | Spring | Hibernate | Angular | Keycloak | JWT | Postgresql</p>
+                <p class="english" style="display: none;">Description:<br>Design and implementation of a comprehensive system for managing archives, documents, and images related to the intercity bus sales exhibition.<br>Database design and back-end layer with Spring Framework and Hibernate<br>Implementing service layer and data model for effective communication between modules<br>UI development with Angular, HTML/CSS, and Bootstrap<br>Implementing secure authentication system with Keycloak and JWT<br>Design and validation of dynamic forms for data entry and editing<br>Creating gallery and file manager module for document management<br>Using IntelliJ IDEA for development and Maven for project build<br>Technologies: Java | Spring | Hibernate | Angular | Keycloak | JWT | PostgreSQL</p>
+            </div>
+            <div class="project">
+                <h3><span class="persian">پروژه تحقیقاتی: سیستم پیش‌بینی مالی مبتنی بر هوش مصنوعی 📅 ۱۳۹۹ – تاکنون</span><span class="english" style="display: none;">Research Project: AI-Based Financial Prediction System 📅 2020 – Present</span></h3>
+                <p class="persian">همکاری با: سروش نجفی (دکترای برق – University of Nevada, Reno)<br>شرح پروژه:<br>طراحی و پیاده‌سازی سامانه‌ی هوشمند پیش‌بینی روند بازار سهام با استفاده از مدل‌های تحلیلی و شبکه‌های عصبی.<br>طراحی بک‌اند با Spring Framework و ارتباطات بین سرویس‌ها با RabbitMQ<br>طراحی پایگاه داده Mysql ,Oracle<br>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>پیاده‌سازی الگوریتم‌های تحلیلی جهت محاسبه اندیکاتورهای مالی<br>توسعه‌ی ربات تلگرامی برای ارسال پیش‌بینی‌ها به گروه‌های کاربری<br>استفاده از Docker جهت استقرار و ایزوله‌سازی اجزای سیستم<br>همکاری با ماژول هوش مصنوعی برای تحلیل داده‌ها<br>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه<br>فناوری‌ها: Java | Spring Boot | Hibernate | RabbitMQ | Docker | Angular | AI Integration | Keycloak</p>
+                <p class="english" style="display: none;">Collaboration with: Soroush Najafi (PhD in Electrical Engineering – University of Nevada, Reno)<br>Description:<br>Design and implementation of an intelligent system for predicting stock market trends using analytical models and neural networks.<br>Back-end design with Spring Framework and inter-service communications with RabbitMQ<br>Database design with MySQL, Oracle<br>Implementing service layer and data model for effective communication between modules<br>Implementing analytical algorithms for calculating financial indicators<br>Development of Telegram bot for sending predictions to user groups<br>Using Docker for deployment and isolation of system components<br>Collaboration with AI module for data analysis<br>Using IntelliJ IDEA for development and Maven for project build<br>Technologies: Java | Spring Boot | Hibernate | RabbitMQ | Docker | Angular | AI Integration | Keycloak</p>
+            </div>
+        </section>
 
-                <h3>توسعه‌ی سیستم مدیریت بایگانی و اسناد نمایشگاه اتوبوس بین‌شهری 📅 ۱۳۹۶ – ۱۴۰۰</h3>
-                <p>شرح پروژه:</p>
-                <ul>
-                    <li>طراحی و پیاده‌سازی یک سیستم جامع برای مدیریت بایگانی، اسناد و تصاویر مرتبط با نمایشگاه فروش اتوبوس بین‌شهری.</li>
-                    <li>طراحی پایگاه داده و لایه‌ی بک‌اند با Spring Framework و Hibernate</li>
-                    <li>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها</li>
-                    <li>توسعه‌ی رابط کاربری با Angular، HTML/CSS و Bootstrap</li>
-                    <li>پیاده‌سازی سیستم احراز هویت ایمن با Keycloak و JWT</li>
-                    <li>طراحی و اعتبارسنجی فرم‌های پویا برای ورود و ویرایش داده‌ها</li>
-                    <li>ایجاد ماژول گالری و فایل‌منیجر برای مدیریت اسناد</li>
-                    <li>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</li>
-                </ul>
-                <p>فناوری‌ها: Java | Spring | Hibernate | Angular | Keycloak | JWT | Postgresql</p>
+        <section id="personality">
+            <h2><i class="fas fa-brain"></i> <span class="persian">ویژگی‌های شخصیتی و حرفه‌ای</span><span class="english" style="display: none;">Personality and Professional Traits</span></h2>
+            <ul>
+                <li class="persian">تیپ شخصیتی INTJ – معمار (The Architect) بر اساس آزمون MBTI</li>
+                <li class="english" style="display: none;">INTJ Personality Type – Architect (The Architect) based on MBTI test</li>
+                <li class="persian">تفکر تحلیلی، راهبردی و آینده‌نگر</li>
+                <li class="english" style="display: none;">Analytical, strategic, and forward-thinking</li>
+                <li class="persian">تمرکز بالا بر بهینه‌سازی، ساختار و امنیت نرم‌افزار</li>
+                <li class="english" style="display: none;">High focus on optimization, structure, and software security</li>
+                <li class="persian">خودآموز، منظم و متعهد به یادگیری مداوم</li>
+                <li class="english" style="display: none;">Self-taught, organized, and committed to continuous learning</li>
+                <li class="persian">علاقه‌مند به همکاری در محیط‌های چابک و پروژه‌های تحقیق‌محور</li>
+                <li class="english" style="display: none;">Interested in collaboration in agile environments and research-oriented projects</li>
+            </ul>
+        </section>
 
-                <h3>پروژه تحقیقاتی: سیستم پیش‌بینی مالی مبتنی بر هوش مصنوعی 📅 ۱۳۹۹ – تاکنون</h3>
-                <p>همکاری با: سروش نجفی (دکترای برق – University of Nevada, Reno)</p>
-                <p>شرح پروژه:</p>
-                <ul>
-                    <li>طراحی و پیاده‌سازی سامانه‌ی هوشمند پیش‌بینی روند بازار سهام با استفاده از مدل‌های تحلیلی و شبکه‌های عصبی.</li>
-                    <li>طراحی بک‌اند با Spring Framework و ارتباطات بین سرویس‌ها با RabbitMQ</li>
-                    <li>طراحی پایگاه داده Mysql ,Oracle</li>
-                    <li>پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها</li>
-                    <li>پیاده‌سازی الگوریتم‌های تحلیلی جهت محاسبه اندیکاتورهای مالی</li>
-                    <li>توسعه‌ی ربات تلگرامی برای ارسال پیش‌بینی‌ها به گروه‌های کاربری</li>
-                    <li>استفاده از Docker جهت استقرار و ایزوله‌سازی اجزای سیستم</li>
-                    <li>همکاری با ماژول هوش مصنوعی برای تحلیل داده‌ها</li>
-                    <li>استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</li>
-                </ul>
-                <p>فناوری‌ها: Java | Spring Boot | Hibernate | RabbitMQ | Docker | Angular | AI Integration | Keycloak</p>
-            </div>
-        </div>
-    </section>
+        <section id="languages">
+            <h2><i class="fas fa-language"></i> <span class="persian">زبان‌ها</span><span class="english" style="display: none;">Languages</span></h2>
+            <ul>
+                <li class="persian">فارسی (زبان مادری)</li>
+                <li class="english" style="display: none;">Persian (Native)</li>
+                <li class="persian">انگلیسی (سطح متوسط – خواندن و نوشتن فنی روان)</li>
+                <li class="english" style="display: none;">English (Intermediate – Fluent in technical reading and writing)</li>
+            </ul>
+        </section>
 
-    <section id="personality">
-        <h2>Personality and Professional Features - ویژگی‌های شخصیتی و حرفه‌ای</h2>
-        <div class="bilingual">
-            <div class="lang-en">
-                <ul>
-                    <li>INTJ personality type – Architect (The Architect) based on MBTI test</li>
-                    <li>Analytical, strategic, and forward-thinking thinking</li>
-                    <li>High focus on optimization, structure, and software security</li>
-                    <li>Self-taught, organized, and committed to continuous learning</li>
-                    <li>Interested in collaboration in agile environments and research-oriented projects</li>
-                </ul>
-            </div>
-            <div class="lang-fa">
-                <ul>
-                    <li>تیپ شخصیتی INTJ – معمار (The Architect) بر اساس آزمون MBTI</li>
-                    <li>تفکر تحلیلی، راهبردی و آینده‌نگر</li>
-                    <li>تمرکز بالا بر بهینه‌سازی، ساختار و امنیت نرم‌افزار</li>
-                    <li>خودآموز، منظم و متعهد به یادگیری مداوم</li>
-                    <li>علاقه‌مند به همکاری در محیط‌های چابک و پروژه‌های تحقیق‌محور</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        <section id="interests">
+            <h2><i class="fas fa-heart"></i> <span class="persian">علایق شخصی</span><span class="english" style="display: none;">Personal Interests</span></h2>
+            <ul>
+                <li class="persian">تحلیل بازارهای مالی و داده‌های پیچیده</li>
+                <li class="english" style="display: none;">Analyzing financial markets and complex data</li>
+                <li class="persian">مطالعه درباره معماری نرم‌افزار و سیستم‌های توزیع شده</li>
+                <li class="english" style="display: none;">Studying software architecture and distributed systems</li>
+                <li class="persian">طراحی سازه‌های پرنده و مطالعه در حوزه آیرودینامیک</li>
+                <li class="english" style="display: none;">Designing flying structures and studying aerodynamics</li>
+            </ul>
+        </section>
+    </div>
 
-    <section id="languages">
-        <h2>Languages - زبان‌ها</h2>
-        <div class="bilingual">
-            <div class="lang-en">
-                <ul>
-                    <li>Persian (native)</li>
-                    <li>English (intermediate level – fluent in technical reading and writing)</li>
-                </ul>
-            </div>
-            <div class="lang-fa">
-                <ul>
-                    <li>فارسی (زبان مادری)</li>
-                    <li>انگلیسی (سطح متوسط – خواندن و نوشتن فنی روان)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="interests">
-        <h2>Personal Interests - علایق شخصی</h2>
-        <div class="bilingual">
-            <div class="lang-en">
-                <ul>
-                    <li>Analysis of financial markets and complex data</li>
-                    <li>Study about software architecture and distributed systems</li>
-                    <li>Design of flying structures and study in aerodynamics</li>
-                </ul>
-            </div>
-            <div class="lang-fa">
-                <ul>
-                    <li>تحلیل بازارهای مالی و داده‌های پیچیده</li>
-                    <li>مطالعه درباره معماری نرم‌افزار و سیستم‌های توزیع شده</li>
-                    <li>طراحی سازه‌های پرنده و مطالعه در حوزه آیرودینامیک</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2025 Esmaeel Jalili. All rights reserved.
-    </footer>
+    <script>
+        let isEnglish = false;
+        function toggleLanguage() {
+            isEnglish = !isEnglish;
+            document.documentElement.lang = isEnglish ? 'en' : 'fa';
+            document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
+            document.querySelectorAll('.persian').forEach(el => {
+                el.style.display = isEnglish ? 'none' : 'block';
+            });
+            document.querySelectorAll('.english').forEach(el => {
+                el.style.display = isEnglish ? 'block' : 'none';
+            });
+            document.querySelector('.lang-switch').textContent = isEnglish ? 'فارسی / English' : 'English / فارسی';
+        }
+    </script>
 </body>
 </html>
