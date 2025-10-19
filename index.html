@@ -17,9 +17,11 @@
             background: linear-gradient(135deg, #f5f7fa, #e6e6fa);
             color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
+            margin-top: 150px; /* Default space for fixed header */
         }
-        .english { font-family: 'Arial', sans-serif; direction: ltr; text-align: left; }
+        .english { 
+            font-family: 'Arial', sans-serif; 
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -28,19 +30,21 @@
         header {
             background: linear-gradient(135deg, #6a1b9a, #ab47bc);
             color: white;
-            padding: 40px 20px 20px;
+            padding: 20px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
             transition: padding 0.3s ease;
         }
         header.scrolled {
-            padding: 20px 20px;
+            padding: 10px 20px;
         }
         .header-title {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(1.2rem, 4vw, 2rem);
             margin: 10px 0;
         }
         .typing {
@@ -58,16 +62,20 @@
             50% { border-color: white; }
         }
         .contact-info {
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            margin-top: 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            margin-top: 10px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
         }
-        .contact-info i {
+        [dir="rtl"] .contact-info i {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+        [dir="ltr"] .contact-info i {
             margin-left: 8px;
-            transition: transform 0.3s ease;
+            margin-right: 0;
         }
         .contact-info i:hover {
             transform: translateY(-3px);
@@ -76,23 +84,26 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 10px;
-            margin-top: 20px;
+            margin-top: 15px;
             padding: 10px;
         }
         .nav-menu {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
+            margin: 0;
         }
         .nav-menu li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 20px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
             transition: background 0.3s, transform 0.3s;
+            white-space: nowrap;
         }
         .nav-menu li a:hover {
             background: rgba(255, 255, 255, 0.2);
@@ -103,14 +114,23 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: white;
+            position: absolute;
+            top: 20px;
+        }
+        [dir="rtl"] .nav-toggle {
+            right: 20px;
+            left: auto;
+        }
+        [dir="ltr"] .nav-toggle {
+            left: 20px;
+            right: auto;
         }
         .lang-switch {
             position: absolute;
-            top: 10px;
-            left: 20px;
+            top: 20px;
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 8px 15px;
+            padding: 8px 12px;
             border-radius: 20px;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -118,52 +138,23 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+        [dir="rtl"] .lang-switch {
+            left: 20px;
+            right: auto;
+        }
+        [dir="ltr"] .lang-switch {
+            right: 20px;
+            left: auto;
         }
         .lang-switch:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: scale(1.05);
         }
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                gap: 10px;
-                background: linear-gradient(135deg, #6a1b9a, #ab47bc);
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 20px;
-                border-radius: 0 0 10px 10px;
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-            .nav-toggle {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-            .lang-switch {
-                top: 20px;
-                left: auto;
-                right: 60px;
-            }
-            header {
-                padding: 20px;
-            }
-            .header-title {
-                font-size: 1.5rem;
-            }
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
         section {
-            margin: 40px 0;
-            padding: 20px;
+            margin: 30px 0;
+            padding: 15px;
             background: white;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -176,24 +167,31 @@
         h2 {
             color: #6a1b9a;
             border-bottom: 2px solid #ab47bc;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-size: clamp(1.2rem, 3.5vw, 1.6rem);
         }
-        h2 i { margin-left: 10px; }
+        [dir="rtl"] h2 i { 
+            margin-left: 0;
+            margin-right: 8px; 
+        }
+        [dir="ltr"] h2 i { 
+            margin-left: 8px;
+            margin-right: 0; 
+        }
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             justify-content: space-between;
         }
         .skill-card {
             flex: 1 1 18%;
-            min-width: 180px;
+            min-width: 160px;
             background: #f3e5f5;
-            padding: 15px;
+            padding: 12px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -204,36 +202,44 @@
         }
         .skill-card h3 {
             color: #6a1b9a;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
         }
         .skill-card ul {
             list-style: none;
             padding: 0;
         }
         .skill-card li {
-            margin: 8px 0;
-            font-size: 0.95rem;
+            margin: 6px 0;
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
         }
-        .skill-card li i{
-            color: #6a1b9a;
-            font-weight: 900;
+        [dir="rtl"] .skill-card li i {
             position: absolute;
             right: 0;
+            left: auto;
+        }
+        [dir="ltr"] .skill-card li i {
+            position: absolute;
+            left: 0;
+            right: auto;
+        }
+        .skill-card li i {
+            color: #6a1b9a;
+            font-weight: 900;
         }
         .project-card {
             background: #f3e5f5;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .project-card:hover {
@@ -242,24 +248,24 @@
         }
         .project-card h3 {
             color: #ab47bc;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+            margin-bottom: 8px;
         }
         .tech-chips {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
+            margin-top: 8px;
         }
         .tech-chip {
             background: #6a1b9a;
             color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.9rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: clamp(0.8rem, 2vw, 0.85rem);
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             transition: background 0.3s;
         }
         .tech-chip:hover {
@@ -270,12 +276,59 @@
             padding: 0;
         }
         li {
-            margin: 10px 0;
+            margin: 8px 0;
             position: relative;
-            padding-right: 25px;
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
         }
-      
+        [dir="rtl"] li {
+            padding-right: 25px;
+            padding-left: 0;
+            text-align: right;
+        }
+        [dir="ltr"] li {
+            padding-left: 25px;
+            padding-right: 0;
+            text-align: left;
+        }
         @media (max-width: 768px) {
+            body {
+                margin-top: 180px; /* Adjust for taller header on mobile */
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 15px;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            [dir="rtl"] .lang-switch {
+                left: auto;
+                right: 60px;
+            }
+            [dir="ltr"] .lang-switch {
+                right: auto;
+                left: 60px;
+            }
+            .header-title {
+                font-size: clamp(1rem, 3.5vw, 1.5rem);
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+                font-size: clamp(0.8rem, 2vw, 0.9rem);
+            }
             .skills-container {
                 flex-direction: column;
                 align-items: center;
@@ -284,28 +337,48 @@
                 flex: 1 1 100%;
                 min-width: 100%;
             }
+            header {
+                padding: 15px;
+            }
         }
         @media (max-width: 480px) {
+            body {
+                margin-top: 200px; /* More space for smaller screens */
+            }
             .container {
                 padding: 10px;
             }
             section {
-                padding: 15px;
+                padding: 10px;
+                margin: 20px 0;
             }
             .lang-switch {
-                padding: 6px 12px;
-                font-size: 0.85rem;
+                padding: 5px 8px;
+                font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+            }
+            [dir="rtl"] .lang-switch {
+                right: 50px;
+                left: auto;
+            }
+            [dir="ltr"] .lang-switch {
+                left: 50px;
+                right: auto;
+            }
+            .nav-toggle {
+                font-size: 1.2rem;
+                top: 15px;
+            }
+            .header-title {
+                font-size: clamp(0.9rem, 3vw, 1.2rem);
+            }
+            .nav-menu li a {
+                font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+                padding: 6px 10px;
             }
         }
-        .text-red{
-            color:red;
-        }
-        .tex-blue{
-            color:#199ff1;
-        }
-        .text-pink{
-            color:#cb05ee;
-        }
+        .text-red { color: red; }
+        .tex-blue { color: #199ff1; }
+        .text-pink { color: #cb05ee; }
     </style>
 </head>
 <body>
@@ -314,7 +387,7 @@
             <i class="fas fa-bars"></i>
         </div>
         <div class="lang-switch" onclick="toggleLanguage()">
-            <i class="fas fa-globe"></i> <span class="lang-text">English / فارسی</span>
+            <i class="fas fa-globe"></i> <span class="lang-text">English</span>
         </div>
         <div class="header-title persian typing">اسماعیل جلیلی 💻 توسعه‌دهنده ارشد جاوا</div>
         <div class="header-title english typing" style="display: none;">Esmaeel Jalili 💻 Senior Java Developer</div>
@@ -509,10 +582,16 @@
                 }
             });
             langText.textContent = isEnglish ? 'فارسی' : 'English';
+            adjustHeaderSpace();
         }
 
         function toggleMenu() {
             document.querySelector('.nav-menu').classList.toggle('active');
+        }
+
+        function adjustHeaderSpace() {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            document.body.style.marginTop = `${headerHeight}px`;
         }
 
         // Trigger typing animation on page load
@@ -520,7 +599,11 @@
             document.querySelectorAll('.typing').forEach(el => {
                 el.classList.add('typing');
             });
+            adjustHeaderSpace();
         });
+
+        // Adjust on resize
+        window.addEventListener('resize', adjustHeaderSpace);
 
         // Add scrolled class to header on scroll
         window.addEventListener('scroll', () => {
@@ -529,6 +612,7 @@
             } else {
                 document.querySelector('header').classList.remove('scrolled');
             }
+            adjustHeaderSpace();
         });
     </script>
 </body>
