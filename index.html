@@ -14,7 +14,7 @@
         }
         body {
             font-family: 'Vazirmatn', sans-serif;
-            background-color: linear-gradient(135deg, #f5f7fa, #e6e6fa);
+            background: linear-gradient(135deg, #f5f7fa, #e6e6fa);
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
@@ -26,15 +26,18 @@
             padding: 20px;
         }
         header {
-            background: url("./banner.svg");
-            background-color: linear-gradient(135deg, #6a1b9a, #ab47bc);
+            background: linear-gradient(135deg, #6a1b9a, #ab47bc);
             color: white;
-            padding: 60px 20px;
+            padding: 40px 20px 20px;
             text-align: center;
-            border-radius: 0 0 20px 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: padding 0.3s ease;
+        }
+        header.scrolled {
+            padding: 20px 20px;
         }
         .header-title {
             font-size: clamp(1.8rem, 5vw, 2.5rem);
@@ -69,22 +72,94 @@
         .contact-info i:hover {
             transform: translateY(-3px);
         }
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #6a1b9a;
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-menu li a {
             color: white;
-            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .nav-menu li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 15px;
             border-radius: 20px;
             cursor: pointer;
-            z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             transition: background 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         .lang-switch:hover {
-            background: #ab47bc;
+            background: rgba(255, 255, 255, 0.3);
             transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                border-radius: 0 0 10px 10px;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            .lang-switch {
+                top: 20px;
+                left: auto;
+                right: 60px;
+            }
+            header {
+                padding: 20px;
+            }
+            .header-title {
+                font-size: 1.5rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
         section {
             margin: 40px 0;
@@ -209,13 +284,6 @@
                 flex: 1 1 100%;
                 min-width: 100%;
             }
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .header-title {
-                font-size: 1.8rem;
-            }
         }
         @media (max-width: 480px) {
             .container {
@@ -225,8 +293,8 @@
                 padding: 15px;
             }
             .lang-switch {
-                padding: 8px 15px;
-                font-size: 0.9rem;
+                padding: 6px 12px;
+                font-size: 0.85rem;
             }
         }
         .text-red{
@@ -241,10 +309,13 @@
     </style>
 </head>
 <body>
-    <div class="lang-switch" onclick="toggleLanguage()">
-        <i class="fas fa-globe"></i> 
-    </div>
     <header>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="lang-switch" onclick="toggleLanguage()">
+            <i class="fas fa-globe"></i> <span class="lang-text">English / فارسی</span>
+        </div>
         <div class="header-title persian typing">اسماعیل جلیلی 💻 توسعه‌دهنده ارشد جاوا</div>
         <div class="header-title english typing" style="display: none;">Esmaeel Jalili 💻 Senior Java Developer</div>
         <div class="contact-info">
@@ -252,6 +323,17 @@
             <span><i class="fas fa-envelope tex-blue"></i> esmaeel.jalili@example.com</span>
             <span><i class="fas fa-phone text-pink"></i> <span dir="ltr"> +98 910 119 3203</span> </span>
         </div>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="#about"><span class="persian">درباره من</span><span class="english" style="display: none;">About Me</span></a></li>
+                <li><a href="#skills"><span class="persian">مهارت‌های تخصصی</span><span class="english" style="display: none;">Technical Skills</span></a></li>
+                <li><a href="#education"><span class="persian">سوابق تحصیلی</span><span class="english" style="display: none;">Education</span></a></li>
+                <li><a href="#experience"><span class="persian">سوابق حرفه‌ای</span><span class="english" style="display: none;">Professional Experience</span></a></li>
+                <li><a href="#personality"><span class="persian">ویژگی‌های شخصیتی و حرفه‌ای</span><span class="english" style="display: none;">Personality and Professional Traits</span></a></li>
+                <li><a href="#languages"><span class="persian">زبان‌ها</span><span class="english" style="display: none;">Languages</span></a></li>
+                <li><a href="#interests"><span class="persian">علایق شخصی</span><span class="english" style="display: none;">Personal Interests</span></a></li>
+            </ul>
+        </nav>
     </header>
     <div class="container">
         <section id="about">
@@ -404,6 +486,8 @@
 
     <script>
         let isEnglish = false;
+        const langText = document.querySelector('.lang-text');
+        
         function toggleLanguage() {
             isEnglish = !isEnglish;
             document.documentElement.lang = isEnglish ? 'en' : 'fa';
@@ -412,7 +496,7 @@
                 el.style.display = isEnglish ? 'none' : 'block';
                 if (el.classList.contains('typing')) {
                     el.classList.remove('typing');
-                    void el.offsetWidth; // Trigger reflow to restart animation
+                    void el.offsetWidth;
                     el.classList.add('typing');
                 }
             });
@@ -420,11 +504,15 @@
                 el.style.display = isEnglish ? 'block' : 'none';
                 if (el.classList.contains('typing')) {
                     el.classList.remove('typing');
-                    void el.offsetWidth; // Trigger reflow to restart animation
+                    void el.offsetWidth;
                     el.classList.add('typing');
                 }
             });
-            document.querySelector('.lang-switch').textContent = isEnglish ? 'فارسی / English' : 'English / فارسی';
+            langText.textContent = isEnglish ? 'فارسی' : 'English';
+        }
+
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
         }
 
         // Trigger typing animation on page load
@@ -433,4 +521,15 @@
                 el.classList.add('typing');
             });
         });
+
+        // Add scrolled class to header on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                document.querySelector('header').classList.add('scrolled');
+            } else {
+                document.querySelector('header').classList.remove('scrolled');
+            }
+        });
     </script>
+</body>
+</html>
