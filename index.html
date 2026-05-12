@@ -1,966 +1,1109 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Esmaeel Jalili | Senior Java Developer</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
-<style>
-
-:root{
-    --primary:#7b2cbf;
-    --primary-dark:#5a189a;
-    --secondary:#9d4edd;
-    --bg:#f4f7fb;
-    --card:#ffffff;
-    --text:#222;
-    --muted:#666;
-    --border:#ececec;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-    --radius:22px;
-    --header-height:90px;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-    scroll-padding-top:120px;
-}
-
-body{
-    font-family:'Vazirmatn',sans-serif;
-    background:
-        radial-gradient(circle at top right,#f3e8ff 0,#f4f7fb 45%),
-        linear-gradient(135deg,#f8fbff,#eef2ff);
-    color:var(--text);
-    overflow-x:hidden;
-    line-height:1.9;
-}
-
-a{
-    text-decoration:none;
-}
-
-img{
-    max-width:100%;
-}
-
-.container{
-    width:min(1200px,92%);
-    margin:auto;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:9999;
-    background:rgba(90,24,154,.88);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,255,255,.1);
-    transition:.3s;
-}
-
-header.scrolled{
-    background:rgba(68,14,116,.96);
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
-}
-
-.header-inner{
-    min-height:var(--header-height);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    padding:18px 0;
-}
-
-.brand{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    min-width:0;
-}
-
-.brand h1{
-    color:#fff;
-    font-size:1.4rem;
-    font-weight:800;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-.brand p{
-    color:#e8dfff;
-    font-size:.95rem;
-}
-
-.navbar{
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-
-.nav-menu{
-    display:flex;
-    align-items:center;
-    list-style:none;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.nav-menu a{
-    color:#fff;
-    padding:10px 14px;
-    border-radius:14px;
-    font-size:.92rem;
-    transition:.25s;
-    font-weight:500;
-}
-
-.nav-menu a:hover{
-    background:rgba(255,255,255,.12);
-}
-
-.actions{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.lang-btn,
-.menu-btn{
-    border:none;
-    cursor:pointer;
-    background:rgba(255,255,255,.12);
-    color:#fff;
-    width:46px;
-    height:46px;
-    border-radius:14px;
-    transition:.25s;
-    font-size:1rem;
-}
-
-.lang-btn:hover,
-.menu-btn:hover{
-    background:rgba(255,255,255,.22);
-}
-
-.menu-btn{
-    display:none;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    padding-top:170px;
-    padding-bottom:80px;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.3fr .7fr;
-    gap:30px;
-    align-items:center;
-}
-
-.hero-card{
-    background:var(--card);
-    border-radius:var(--radius);
-    padding:40px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--border);
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:#f3e8ff;
-    color:var(--primary-dark);
-    padding:10px 18px;
-    border-radius:999px;
-    font-size:.9rem;
-    margin-bottom:18px;
-    font-weight:700;
-}
-
-.hero h2{
-    font-size:2.5rem;
-    line-height:1.4;
-    margin-bottom:18px;
-}
-
-.gradient{
-    background:linear-gradient(90deg,var(--primary),#c77dff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-    color:var(--muted);
-    font-size:1.03rem;
-}
-
-.contact-grid{
-    margin-top:30px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;
-}
-
-.contact-item{
-    background:#faf7ff;
-    border:1px solid #efe5ff;
-    border-radius:18px;
-    padding:18px;
-    display:flex;
-    gap:14px;
-    align-items:center;
-}
-
-.contact-item i{
-    width:48px;
-    height:48px;
-    border-radius:14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    flex-shrink:0;
-}
-
-.contact-item span{
-    color:var(--muted);
-    font-size:.92rem;
-}
-
-.contact-item strong{
-    display:block;
-    color:var(--text);
-}
-
-/* ================= SECTIONS ================= */
-
-.section{
-    margin-bottom:28px;
-}
-
-.card{
-    background:var(--card);
-    border-radius:var(--radius);
-    padding:34px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--border);
-}
-
-.section-title{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin-bottom:28px;
-}
-
-.section-title i{
-    width:56px;
-    height:56px;
-    border-radius:18px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.2rem;
-}
-
-.section-title h3{
-    font-size:1.5rem;
-}
-
-/* ================= SKILLS ================= */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:22px;
-}
-
-.skill-box{
-    border:1px solid var(--border);
-    border-radius:22px;
-    padding:26px;
-    transition:.3s;
-    background:linear-gradient(180deg,#fff,#fbf9ff);
-}
-
-.skill-box:hover{
-    transform:translateY(-6px);
-    box-shadow:0 16px 30px rgba(0,0,0,.08);
-}
-
-.skill-box h4{
-    color:var(--primary-dark);
-    margin-bottom:16px;
-    font-size:1.1rem;
-}
-
-.skill-box ul{
-    list-style:none;
-}
-
-.skill-box li{
-    position:relative;
-    padding-right:22px;
-    margin-bottom:10px;
-    color:#444;
-}
-
-.skill-box li::before{
-    content:"";
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:var(--secondary);
-    position:absolute;
-    top:11px;
-    right:0;
-}
-
-/* ================= EXPERIENCE ================= */
-
-.timeline{
-    display:flex;
-    flex-direction:column;
-    gap:26px;
-}
-
-.timeline-item{
-    border:1px solid var(--border);
-    border-radius:24px;
-    padding:30px;
-    background:linear-gradient(180deg,#fff,#faf7ff);
-    transition:.3s;
-}
-
-.timeline-item:hover{
-    transform:translateY(-5px);
-    box-shadow:0 14px 30px rgba(0,0,0,.08);
-}
-
-.timeline-head{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:20px;
-    flex-wrap:wrap;
-}
-
-.timeline-head h4{
-    color:var(--primary-dark);
-    font-size:1.2rem;
-}
-
-.timeline-date{
-    background:#efe5ff;
-    color:var(--primary-dark);
-    padding:8px 14px;
-    border-radius:999px;
-    font-size:.88rem;
-    height:fit-content;
-    font-weight:700;
-}
-
-.tech-stack{
-    margin-top:22px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.tech{
-    padding:8px 14px;
-    border-radius:999px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:#fff;
-    font-size:.85rem;
-}
-
-/* ================= LIST ================= */
-
-.clean-list{
-    list-style:none;
-}
-
-.clean-list li{
-    position:relative;
-    padding-right:24px;
-    margin-bottom:14px;
-}
-
-.clean-list li::before{
-    content:"✔";
-    color:var(--primary);
-    position:absolute;
-    right:0;
-    top:0;
-    font-weight:bold;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    padding:50px 0 70px;
-    text-align:center;
-    color:#666;
-    font-size:.95rem;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:1100px){
-
-    .nav-menu{
-        position:fixed;
-        top:90px;
-        right:-100%;
-        width:300px;
-        max-width:85%;
-        height:calc(100vh - 90px);
-        background:#5a189a;
-        flex-direction:column;
-        align-items:flex-start;
-        padding:30px;
-        transition:.35s ease;
-        overflow-y:auto;
-        flex-wrap:nowrap;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esmaeil Jalili Paydar | Senior Java Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    .nav-menu.active{
-        right:0;
+    :root{
+      --bg:#0f172a;
+      --bg-soft:#111827;
+      --card:#ffffff;
+      --primary:#2563eb;
+      --primary-2:#1d4ed8;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --light:#f8fafc;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:22px;
     }
 
-    .nav-menu li{
-        width:100%;
+    body{
+      font-family:'Vazirmatn',sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.9;
+      overflow-x:hidden;
     }
 
-    .nav-menu a{
-        width:100%;
-        display:block;
+    body[dir="ltr"]{
+      font-family:Arial,sans-serif;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(15,23,42,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav{
+      max-width:1300px;
+      margin:auto;
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 24px;
+    }
+
+    .logo{
+      color:#fff;
+      font-size:1.2rem;
+      font-weight:800;
+      letter-spacing:.3px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      color:#e5e7eb;
+      padding:10px 14px;
+      border-radius:12px;
+      transition:.25s;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      background:rgba(255,255,255,.08);
+      color:#fff;
+    }
+
+    .lang-btn{
+      border:none;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 18px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:700;
+      transition:.25s;
+    }
+
+    .lang-btn:hover{
+      background:var(--primary-2);
     }
 
     .menu-btn{
-        display:block;
+      display:none;
+      background:none;
+      border:none;
+      color:#fff;
+      font-size:2rem;
+      cursor:pointer;
     }
 
-    .hero-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:768px){
-
-    :root{
-        --header-height:80px;
-    }
-
-    html{
-        scroll-padding-top:100px;
-    }
+    /* HERO */
 
     .hero{
-        padding-top:130px;
+      min-height:100vh;
+      background:
+      radial-gradient(circle at top right, rgba(37,99,235,.25), transparent 30%),
+      linear-gradient(135deg,#0f172a,#111827);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      padding:130px 24px 80px;
+      position:relative;
+      overflow:hidden;
     }
 
-    .hero-card,
-    .card{
-        padding:24px;
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:rgba(37,99,235,.15);
+      border-radius:50%;
+      filter:blur(90px);
+      top:-180px;
+      right:-140px;
     }
 
-    .hero h2{
-        font-size:2rem;
+    .hero-container{
+      max-width:1300px;
+      margin:auto;
+      width:100%;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero-text{
+      animation:fadeUp 1s ease;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.1);
+      padding:10px 18px;
+      border-radius:100px;
+      margin-bottom:24px;
+      color:#cbd5e1;
+      font-size:.95rem;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      line-height:1.2;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero h1 span{
+      color:#60a5fa;
+    }
+
+    .typing{
+      font-size:1.4rem;
+      color:#cbd5e1;
+      margin-bottom:26px;
+      min-height:42px;
+    }
+
+    .hero-desc{
+      color:#d1d5db;
+      font-size:1.05rem;
+      max-width:700px;
+      margin-bottom:34px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 26px;
+      border-radius:16px;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:var(--primary-2);
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(255,255,255,.2);
+      color:#fff;
+      background:rgba(255,255,255,.04);
+    }
+
+    .btn-outline:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      padding:34px;
+      backdrop-filter:blur(16px);
+      animation:fadeUp 1.2s ease;
+      box-shadow:0 20px 50px rgba(0,0,0,.2);
+    }
+
+    .info-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      gap:20px;
+    }
+
+    .info-row:last-child{
+      border-bottom:none;
+    }
+
+    .info-title{
+      color:#93c5fd;
+      font-weight:600;
+    }
+
+    .info-value{
+      color:#fff;
+      text-align:left;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 24px;
+      scroll-margin-top:100px;
+    }
+
+    .container{
+      max-width:1300px;
+      margin:auto;
     }
 
     .section-title{
-        align-items:flex-start;
+      text-align:center;
+      margin-bottom:70px;
     }
 
-    .section-title h3{
-        font-size:1.25rem;
+    .section-title h2{
+      font-size:2.5rem;
+      margin-bottom:14px;
+      color:#0f172a;
     }
 
-}
-
-@media(max-width:480px){
-
-    .brand h1{
-        font-size:1rem;
+    .section-title p{
+      color:var(--muted);
+      max-width:700px;
+      margin:auto;
     }
 
-    .brand p{
-        font-size:.78rem;
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
     }
 
-    .hero h2{
-        font-size:1.55rem;
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:34px;
+      box-shadow:var(--shadow);
     }
 
-    .contact-grid{
-        grid-template-columns:1fr;
+    .card h3{
+      margin-bottom:20px;
+      font-size:1.4rem;
+      color:#111827;
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
+    }
+
+    .skill-card{
+      background:#fff;
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      transition:.3s;
+      border:1px solid transparent;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-8px);
+      border-color:#bfdbfe;
+    }
+
+    .skill-card h3{
+      margin-bottom:18px;
+      color:var(--primary);
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .tag{
+      background:#eff6ff;
+      color:#1d4ed8;
+      padding:8px 14px;
+      border-radius:100px;
+      font-size:.9rem;
+      font-weight:600;
+    }
+
+    /* TIMELINE */
+
+    .timeline{
+      position:relative;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:4px;
+      background:#bfdbfe;
+      right:20px;
+    }
+
+    body[dir="ltr"] .timeline::before{
+      right:auto;
+      left:20px;
     }
 
     .timeline-item{
-        padding:22px;
+      position:relative;
+      padding-inline-start:80px;
+      margin-bottom:40px;
     }
 
-    .timeline-head{
+    .timeline-dot{
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:var(--primary);
+      position:absolute;
+      top:10px;
+      right:13px;
+      box-shadow:0 0 0 6px #dbeafe;
+    }
+
+    body[dir="ltr"] .timeline-dot{
+      right:auto;
+      left:13px;
+    }
+
+    .timeline-card{
+      background:#fff;
+      padding:30px;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .timeline-date{
+      color:var(--primary);
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .timeline-card ul{
+      margin-top:16px;
+      padding-inline-start:20px;
+    }
+
+    /* TRAITS */
+
+    .traits{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:24px;
+    }
+
+    .trait{
+      background:#fff;
+      padding:30px;
+      border-radius:24px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      transition:.3s;
+    }
+
+    .trait:hover{
+      transform:translateY(-8px);
+      background:linear-gradient(135deg,#2563eb,#1d4ed8);
+      color:#fff;
+    }
+
+    .trait .icon{
+      font-size:2rem;
+      margin-bottom:14px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#0f172a;
+      color:#cbd5e1;
+      padding:40px 24px;
+      text-align:center;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:980px){
+
+      .hero-container,
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:3rem;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .menu-btn{
+        display:block;
+      }
+
+      .nav-links{
+        position:fixed;
+        top:78px;
+        right:-100%;
+        width:100%;
+        background:#111827;
         flex-direction:column;
+        padding:30px;
+        transition:.35s;
+      }
+
+      body[dir="ltr"] .nav-links{
+        right:auto;
+        left:-100%;
+      }
+
+      .nav-links.active{
+        right:0;
+      }
+
+      body[dir="ltr"] .nav-links.active{
+        left:0;
+      }
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-actions{
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:2.3rem;
+      }
+
+      .typing{
+        font-size:1.1rem;
+      }
+
+      .timeline::before{
+        right:12px;
+      }
+
+      body[dir="ltr"] .timeline::before{
+        left:12px;
+      }
+
+      .timeline-item{
+        padding-inline-start:50px;
+      }
+
+      .timeline-dot{
+        right:5px;
+      }
+
+      body[dir="ltr"] .timeline-dot{
+        left:5px;
+      }
     }
 
-}
+    @media(max-width:500px){
 
-</style>
+      .section-title h2{
+        font-size:2rem;
+      }
+
+      .card,
+      .timeline-card,
+      .skill-card,
+      .trait{
+        padding:24px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body dir="rtl">
 
-<header id="header">
-    <div class="container header-inner">
+<header>
+  <nav class="nav">
 
-        <div class="brand">
-            <h1>اسماعیل جلیلی 💻 توسعه‌دهنده ارشد جاوا</h1>
-            <p>Senior Java Developer | Spring | Microservices | Reactive</p>
-        </div>
-
-        <nav class="navbar">
-
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about">درباره من</a></li>
-                <li><a href="#skills">مهارت‌ها</a></li>
-                <li><a href="#education">تحصیلات</a></li>
-                <li><a href="#experience">سوابق حرفه‌ای</a></li>
-                <li><a href="#personality">ویژگی‌های شخصیتی</a></li>
-                <li><a href="#languages">زبان‌ها</a></li>
-                <li><a href="#interests">علایق</a></li>
-            </ul>
-
-            <div class="actions">
-                <button class="menu-btn" id="menuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-        </nav>
-
+    <div class="logo">
+      <span data-fa="اسماعیل جلیلی پایدار" data-en="Esmaeil Jalili Paydar">
+        اسماعیل جلیلی پایدار
+      </span>
     </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links" id="navMenu">
+      <li><a href="#about" data-fa="درباره من" data-en="About">درباره من</a></li>
+      <li><a href="#skills" data-fa="مهارت‌ها" data-en="Skills">مهارت‌ها</a></li>
+      <li><a href="#experience" data-fa="تجربیات" data-en="Experience">تجربیات</a></li>
+      <li><a href="#education" data-fa="تحصیلات" data-en="Education">تحصیلات</a></li>
+      <li><a href="#traits" data-fa="ویژگی‌ها" data-en="Traits">ویژگی‌ها</a></li>
+      <li><button class="lang-btn" onclick="toggleLanguage()">EN</button></li>
+    </ul>
+
+  </nav>
 </header>
 
 <section class="hero">
 
-    <div class="container">
+  <div class="hero-container">
 
-        <div class="hero-grid">
+    <div class="hero-text">
 
-            <div class="hero-card">
+      <div class="badge">
+        🚀
+        <span data-fa="توسعه‌دهنده ارشد جاوا" data-en="Senior Java Developer">
+          توسعه‌دهنده ارشد جاوا
+        </span>
+      </div>
 
-                <div class="badge">
-                    <i class="fas fa-code"></i>
-                    +10 سال تجربه حرفه‌ای
-                </div>
+      <h1>
+        <span data-fa="اسماعیل جلیلی پایدار" data-en="Esmaeil Jalili Paydar">
+          اسماعیل جلیلی پایدار
+        </span>
+      </h1>
 
-                <h2>
-                    توسعه‌دهنده ارشد
-                    <span class="gradient">Java</span>
-                    با تخصص در معماری مدرن نرم‌افزار
-                </h2>
+      <div class="typing" id="typing"></div>
 
-                <p>
-                    من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم. کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم. به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.
-                </p>
+      <p class="hero-desc"
+         data-fa="توسعه‌دهنده خودآموخته با بیش از ۱۰ سال تجربه در Java، Spring Framework، معماری Microservices و Reactive Programming."
+         data-en="Self-taught developer with 10+ years of experience in Java, Spring Framework, Microservices Architecture and Reactive Programming.">
 
-            </div>
+        توسعه‌دهنده خودآموخته با بیش از ۱۰ سال تجربه در Java، Spring Framework، معماری Microservices و Reactive Programming.
 
-            <div class="hero-card">
+      </p>
 
-                <div class="contact-grid">
+      <div class="hero-actions">
+        <a href="#experience" class="btn btn-primary"
+           data-fa="مشاهده سوابق"
+           data-en="View Experience">
+          مشاهده سوابق
+        </a>
 
-                    <div class="contact-item">
-                        <i class="fas fa-location-dot"></i>
-                        <div>
-                            <span>موقعیت</span>
-                            <strong>اصفهان</strong>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <span>ایمیل</span>
-                            <strong>esmaeel.jalili@example.com</strong>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <span>تلفن</span>
-                            <strong dir="ltr">+98 910 119 3203</strong>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="fas fa-brain"></i>
-                        <div>
-                            <span>تیپ شخصیتی</span>
-                            <strong>INTJ (Architect)</strong>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+        <a href="mailto:jalil.esmael@gmail.com" class="btn btn-outline">
+          Contact Me
+        </a>
+      </div>
 
     </div>
 
+    <div class="hero-card">
+
+      <div class="info-row">
+        <div class="info-title">📍 Location</div>
+        <div class="info-value">Isfahan, Iran</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-title">📧 Email</div>
+        <div class="info-value">jalil.esmael@gmail.com</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-title">📞 Phone</div>
+        <div class="info-value" dir="ltr">09101193203</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-title">🧠 Personality</div>
+        <div class="info-value">INTJ</div>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<div class="container">
+<section id="about">
 
-    <!-- Skills -->
+  <div class="container">
 
-    <section class="section" id="skills">
+    <div class="section-title">
+      <h2 data-fa="درباره من" data-en="About Me">درباره من</h2>
 
-        <div class="card">
+      <p
+      data-fa="متخصص توسعه سیستم‌های مقیاس‌پذیر، معماری مدرن و طراحی Backend حرفه‌ای."
+      data-en="Experienced in scalable systems, modern architecture and enterprise backend development.">
 
-            <div class="section-title">
-                <i class="fas fa-tools"></i>
-                <h3>مهارت‌های تخصصی</h3>
-            </div>
+      متخصص توسعه سیستم‌های مقیاس‌پذیر، معماری مدرن و طراحی Backend حرفه‌ای.
 
-            <div class="skills-grid">
+      </p>
+    </div>
 
-                <div class="skill-box">
-                    <h4>زبان‌ها و فریم‌ورک‌ها</h4>
-                    <ul>
-                        <li>Java Core, Reactive, Functional</li>
-                        <li>Spring Framework Boot, Cloud, Security, Data</li>
-                        <li>Hibernate / JPA</li>
-                        <li>RESTful API Development</li>
-                    </ul>
-                </div>
+    <div class="about-grid">
 
-                <div class="skill-box">
-                    <h4>معماری نرم‌افزار</h4>
-                    <ul>
-                        <li>Microservices Architecture</li>
-                        <li>Reactive Programming</li>
-                        <li>Cloud-Native Design</li>
-                        <li>Message-Driven Systems RabbitMQ</li>
-                        <li>Keycloak & JWT Authentication</li>
-                    </ul>
-                </div>
+      <div class="card">
+        <h3 data-fa="معرفی" data-en="Introduction">معرفی</h3>
 
-                <div class="skill-box">
-                    <h4>ابزارهای توسعه</h4>
-                    <ul>
-                        <li>Git, GitHub, GitLab</li>
-                        <li>Jira, Scrum, Agile</li>
-                        <li>Docker & DevOps</li>
-                        <li>CI/CD & Build Automation</li>
-                    </ul>
-                </div>
+        <p
+        data-fa="من یک توسعه‌دهنده خودآموخته و تحلیل‌گر هستم که به ساخت نرم‌افزارهای تمیز، پایدار و قابل توسعه علاقه زیادی دارم. تمرکز اصلی من بر Java، Spring Ecosystem، Reactive Systems و معماری Microservices است."
+        data-en="I am a self-taught and analytical developer passionate about building clean, scalable and maintainable software systems. My main focus is Java, Spring Ecosystem, Reactive Systems and Microservices Architecture.">
 
-                <div class="skill-box">
-                    <h4>پایگاه داده‌ها</h4>
-                    <ul>
-                        <li>MySQL, PostgreSQL, Oracle</li>
-                        <li>SQL Optimization</li>
-                    </ul>
-                </div>
+        من یک توسعه‌دهنده خودآموخته و تحلیل‌گر هستم که به ساخت نرم‌افزارهای تمیز، پایدار و قابل توسعه علاقه زیادی دارم.
 
-                <div class="skill-box">
-                    <h4>فرانت‌اند</h4>
-                    <ul>
-                        <li>Angular, TypeScript</li>
-                        <li>HTML5, CSS3, Bootstrap</li>
-                    </ul>
-                </div>
+        </p>
+      </div>
 
-            </div>
+      <div class="card">
+        <h3 data-fa="علایق حرفه‌ای" data-en="Professional Interests">علایق حرفه‌ای</h3>
+
+        <p
+        data-fa="یادگیری فناوری‌های جدید، طراحی سیستم‌های Enterprise، بهینه‌سازی Performance و حل مسائل پیچیده نرم‌افزاری."
+        data-en="Learning new technologies, designing enterprise systems, performance optimization and solving complex software problems.">
+
+        یادگیری فناوری‌های جدید، طراحی سیستم‌های Enterprise، بهینه‌سازی Performance و حل مسائل پیچیده نرم‌افزاری.
+
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2 data-fa="مهارت‌های فنی" data-en="Technical Skills">مهارت‌های فنی</h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>Java & Backend</h3>
+
+        <div class="tags">
+          <span class="tag">Java Core</span>
+          <span class="tag">Functional</span>
+          <span class="tag">Reactive</span>
+          <span class="tag">REST API</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Spring Ecosystem</h3>
+
+        <div class="tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Spring Cloud</span>
+          <span class="tag">Spring Security</span>
+          <span class="tag">Spring Data</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Database</h3>
+
+        <div class="tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Oracle</span>
+          <span class="tag">Hibernate</span>
+          <span class="tag">JPA</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Frontend</h3>
+
+        <div class="tags">
+          <span class="tag">Angular</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">Bootstrap</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Architecture</h3>
+
+        <div class="tags">
+          <span class="tag">Microservices</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">Design Patterns</span>
+          <span class="tag">Scalable Systems</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>DevOps & Tools</h3>
+
+        <div class="tags">
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">GitLab</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Agile</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="experience">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2 data-fa="سوابق حرفه‌ای" data-en="Professional Experience">
+        سوابق حرفه‌ای
+      </h2>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-card">
+
+          <div class="timeline-date">
+            1402 - 1404
+          </div>
+
+          <h3
+          data-fa="توسعه‌دهنده فول‌استک جاوا"
+          data-en="Full Stack Java Developer">
+
+          توسعه‌دهنده فول‌استک جاوا
+
+          </h3>
+
+          <ul>
+            <li
+            data-fa="توسعه سیستم مدیریت املاک مبتنی بر معماری Microservices"
+            data-en="Developed property management system based on Microservices architecture">
+
+            توسعه سیستم مدیریت املاک مبتنی بر معماری Microservices
+
+            </li>
+
+            <li>Spring Boot & Angular Development</li>
+            <li>RESTful API Implementation</li>
+            <li>Agile / Scrum Workflow</li>
+          </ul>
 
         </div>
 
-    </section>
+      </div>
 
-    <!-- Education -->
+      <div class="timeline-item">
 
-    <section class="section" id="education">
+        <div class="timeline-dot"></div>
 
-        <div class="card">
+        <div class="timeline-card">
 
-            <div class="section-title">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>سوابق تحصیلی</h3>
-            </div>
+          <div class="timeline-date">
+            1400 - 1402
+          </div>
 
-            <ul class="clean-list">
-                <li>
-                    کارشناسی مهندسی هوافضا - دانشگاه آزاد اسلامی واحد نجف‌آباد - 📅 مهر ۱۳۹۱ – خرداد ۱۳۹۶
-                </li>
-            </ul>
+          <h3
+          data-fa="توسعه‌دهنده بک‌اند جاوا"
+          data-en="Backend Java Developer">
 
-        </div>
+          توسعه‌دهنده بک‌اند جاوا
 
-    </section>
+          </h3>
 
-    <!-- Experience -->
+          <ul>
+            <li
+            data-fa="توسعه سیستم فروش و انبار"
+            data-en="Developed sales and inventory system">
 
-    <section class="section" id="experience">
+            توسعه سیستم فروش و انبار
 
-        <div class="card">
+            </li>
 
-            <div class="section-title">
-                <i class="fas fa-briefcase"></i>
-                <h3>سوابق حرفه‌ای</h3>
-            </div>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <div class="timeline-head">
-                        <h4>توسعه‌دهنده فول‌استک جاوا | شرکت خصوصی فناوری اطلاعات</h4>
-                        <div class="timeline-date">۱۴۰۱ – ۱۴۰۴</div>
-                    </div>
-
-                    <p>
-                        <strong>پروژه: توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه</strong>
-                        <br><br>
-
-                        طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، محاسبه‌ی حق بیمه و صدور و مدیریت کاربران و …در سازمان‌های بیمه‌گر بزرگ.
-                        <br>
-                        توسعه‌ی بک‌اند با استفاده از Spring Framework، Hibernate و Oracle Database
-                        <br>
-                        طراحی و توسعه‌ی رابط کاربری با JSP و Kendo UI
-                        <br>
-                        استفاده از فریم‌ورک داخلی شرکت جهت توسعه‌ی ماژول‌های اختصاصی
-                        <br>
-                        پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها
-                        <br>
-                        استفاده از Jira برای مدیریت وظایف و GitLab جهت کنترل نسخه
-                        <br>
-                        توسعه و نگه‌داری در محیط Agile / Scrum
-                        <br>
-                        استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه
-                    </p>
-
-                    <div class="tech-stack">
-                        <span class="tech">Java</span>
-                        <span class="tech">Spring Framework</span>
-                        <span class="tech">Hibernate</span>
-                        <span class="tech">JSP</span>
-                        <span class="tech">Kendo UI</span>
-                        <span class="tech">Oracle DB</span>
-                        <span class="tech">GitLab</span>
-                        <span class="tech">Jira</span>
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-head">
-                        <h4>توسعه‌دهنده بک‌اند جاوا | شرکت خصوصی فناوری اطلاعات</h4>
-                        <div class="timeline-date">۱۳۹۹ – ۱۴۰۱</div>
-                    </div>
-
-                    <p>
-                        <strong>پروژه: توسعه‌ی سیستم مدیریت املاک و مستغلات</strong>
-                        <br><br>
-
-                        طراحی و توسعه‌ی سیستم جامع مدیریت املاک شامل ثبت، ویرایش، جستجو و مدیریت اطلاعات ملک، مالکین و مستأجرین
-                        <br>
-                        توسعه‌ی بک‌اند با Spring Boot و Spring Data JPA
-                        <br>
-                        پیاده‌سازی RESTful API برای ارتباط با فرانت‌اند Angular
-                        <br>
-                        استفاده از MySQL برای ذخیره‌سازی داده‌ها
-                        <br>
-                        پیاده‌سازی احراز هویت و مجوزدهی با Spring Security
-                        <br>
-                        استفاده از Git و GitHub برای کنترل نسخه
-                        <br>
-                        توسعه در محیط Agile با استفاده از Jira
-                    </p>
-
-                    <div class="tech-stack">
-                        <span class="tech">Spring Boot</span>
-                        <span class="tech">Spring Security</span>
-                        <span class="tech">MySQL</span>
-                        <span class="tech">Angular</span>
-                        <span class="tech">GitHub</span>
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-head">
-                        <h4>توسعه‌دهنده جاوا | شرکت خصوصی فناوری اطلاعات</h4>
-                        <div class="timeline-date">۱۳۹۷ – ۱۳۹۹</div>
-                    </div>
-
-                    <p>
-                        <strong>پروژه: توسعه‌ی سیستم مدیریت فروش و انبار</strong>
-                        <br><br>
-
-                        توسعه‌ی سیستم جامع مدیریت فروش، انبار و حسابداری برای شرکت‌های تولیدی و توزیعی
-                        <br>
-                        توسعه‌ی بک‌اند با Spring Framework و Hibernate
-                        <br>
-                        طراحی و پیاده‌سازی پایگاه داده با MySQL
-                        <br>
-                        توسعه‌ی رابط کاربری با JSP و Bootstrap
-                        <br>
-                        پیاده‌سازی گزارش‌گیری با JasperReports
-                        <br>
-                        استفاده از Maven برای مدیریت وابستگی‌ها
-                        <br>
-                        کار تیمی با استفاده از Git
-                    </p>
-
-                    <div class="tech-stack">
-                        <span class="tech">Java</span>
-                        <span class="tech">Hibernate</span>
-                        <span class="tech">Bootstrap</span>
-                        <span class="tech">JasperReports</span>
-                        <span class="tech">Git</span>
-                    </div>
-
-                </div>
-
-            </div>
+            <li>Database Optimization</li>
+            <li>Spring Framework Development</li>
+            <li>Clean Architecture</li>
+          </ul>
 
         </div>
 
-    </section>
+      </div>
 
-    <!-- Personality -->
+      <div class="timeline-item">
 
-    <section class="section" id="personality">
+        <div class="timeline-dot"></div>
 
-        <div class="card">
+        <div class="timeline-card">
 
-            <div class="section-title">
-                <i class="fas fa-brain"></i>
-                <h3>ویژگی‌های شخصیتی</h3>
-            </div>
+          <div class="timeline-date">
+            1397 - 1400
+          </div>
 
-            <ul class="clean-list">
-                <li>تیپ شخصیتی: INTJ (معمار) - تحلیلگر، منطقی، مستقل و هدف‌محور</li>
-                <li>کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها و فناوری‌های نوین</li>
-                <li>توانایی یادگیری سریع و خودآموز</li>
-                <li>رویکرد تحلیلی و منطقی در حل مسائل پیچیده</li>
-                <li>علاقه‌مند به بهینه‌سازی و خلق سیستم‌های کارآمد</li>
-                <li>توانایی کار تیمی و همکاری مؤثر در محیط‌های Agile</li>
-            </ul>
+          <h3
+          data-fa="توسعه‌دهنده جاوا"
+          data-en="Java Developer">
 
-        </div>
+          توسعه‌دهنده جاوا
 
-    </section>
+          </h3>
 
-    <!-- Languages -->
+          <ul>
+            <li
+            data-fa="توسعه سیستم بیمه"
+            data-en="Insurance System Development">
 
-    <section class="section" id="languages">
+            توسعه سیستم بیمه
 
-        <div class="card">
+            </li>
 
-            <div class="section-title">
-                <i class="fas fa-language"></i>
-                <h3>زبان‌ها</h3>
-            </div>
-
-            <ul class="clean-list">
-                <li>فارسی: زبان مادری</li>
-                <li>انگلیسی: متوسط (خواندن و نوشتن مستندات فنی)</li>
-            </ul>
+            <li>Hibernate / JPA</li>
+            <li>Oracle Database</li>
+            <li>Enterprise Software Development</li>
+          </ul>
 
         </div>
 
-    </section>
+      </div>
 
-    <!-- Interests -->
+    </div>
 
-    <section class="section" id="interests">
+  </div>
 
-        <div class="card">
+</section>
 
-            <div class="section-title">
-                <i class="fas fa-heart"></i>
-                <h3>علایق شخصی</h3>
-            </div>
+<section id="education">
 
-            <ul class="clean-list">
-                <li>مطالعه‌ی کتاب‌های فنی و مقالات علمی در حوزه‌ی فناوری اطلاعات</li>
-                <li>یادگیری فناوری‌های نوین و ابزارهای جدید توسعه نرم‌افزار</li>
-                <li>مشارکت در پروژه‌های Open Source</li>
-                <li>بازی‌های ویدیویی استراتژیک و پازل</li>
-                <li>گوش دادن به موسیقی کلاسیک و الکترونیک</li>
-            </ul>
+  <div class="container">
 
-        </div>
+    <div class="section-title">
+      <h2 data-fa="تحصیلات" data-en="Education">تحصیلات</h2>
+    </div>
 
-    </section>
+    <div class="card">
 
-</div>
+      <h3
+      data-fa="کارشناسی مهندسی هوافضا"
+      data-en="Bachelor of Aerospace Engineering">
+
+      کارشناسی مهندسی هوافضا
+
+      </h3>
+
+      <p
+      data-fa="دانشگاه آزاد اسلامی واحد نجف‌آباد | ۱۳۹۱ - ۱۳۹۶"
+      data-en="Islamic Azad University, Najafabad Branch | 2012 - 2017">
+
+      دانشگاه آزاد اسلامی واحد نجف‌آباد | ۱۳۹۱ - ۱۳۹۶
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="traits">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2 data-fa="ویژگی‌های شخصیتی" data-en="Personality Traits">
+        ویژگی‌های شخصیتی
+      </h2>
+    </div>
+
+    <div class="traits">
+
+      <div class="trait">
+        <div class="icon">🧠</div>
+        <h3 data-fa="تحلیلی" data-en="Analytical">تحلیلی</h3>
+      </div>
+
+      <div class="trait">
+        <div class="icon">⚡</div>
+        <h3 data-fa="یادگیرنده سریع" data-en="Fast Learner">
+          یادگیرنده سریع
+        </h3>
+      </div>
+
+      <div class="trait">
+        <div class="icon">🔍</div>
+        <h3 data-fa="کنجکاو" data-en="Curious">کنجکاو</h3>
+      </div>
+
+      <div class="trait">
+        <div class="icon">📐</div>
+        <h3 data-fa="منطقی" data-en="Logical">منطقی</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 <footer>
-    طراحی شده با HTML / CSS / JavaScript — کاملاً Responsive و بهینه برای GitHub Pages
+
+  <p>
+    © 2026 Esmaeil Jalili Paydar — Senior Java Developer
+  </p>
+
 </footer>
 
 <script>
 
-const menuBtn = document.getElementById('menuBtn');
-const navMenu = document.getElementById('navMenu');
+  /* MOBILE MENU */
 
-menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+  function toggleMenu(){
+    document.getElementById('navMenu').classList.toggle('active');
+  }
 
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+  /* LANGUAGE */
+
+  let currentLang = 'fa';
+
+  function toggleLanguage(){
+
+    currentLang = currentLang === 'fa' ? 'en' : 'fa';
+
+    document.documentElement.lang = currentLang;
+    document.body.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-fa]').forEach(el=>{
+      el.innerText = currentLang === 'fa'
+      ? el.dataset.fa
+      : el.dataset.en;
     });
-});
 
-window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
+    document.querySelector('.lang-btn').innerText =
+    currentLang === 'fa' ? 'EN' : 'FA';
 
-    if(window.scrollY > 20){
-        header.classList.add('scrolled');
+    updateTyping();
+  }
+
+  /* TYPING EFFECT */
+
+  const typingElement = document.getElementById('typing');
+
+  const faTexts = [
+    'متخصص Java و Spring',
+    'علاقه‌مند به معماری Microservices',
+    'توسعه‌دهنده سیستم‌های مقیاس‌پذیر'
+  ];
+
+  const enTexts = [
+    'Java & Spring Specialist',
+    'Microservices Architecture Enthusiast',
+    'Scalable Systems Developer'
+  ];
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function updateTyping(){
+
+    const texts = currentLang === 'fa' ? faTexts : enTexts;
+
+    const currentText = texts[textIndex];
+
+    if(!deleting){
+      typingElement.textContent =
+      currentText.substring(0,charIndex++);
+
+      if(charIndex > currentText.length){
+        deleting = true;
+
+        setTimeout(updateTyping,1200);
+        return;
+      }
+
     }else{
-        header.classList.remove('scrolled');
+
+      typingElement.textContent =
+      currentText.substring(0,charIndex--);
+
+      if(charIndex < 0){
+        deleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
     }
-});
+
+    setTimeout(updateTyping,deleting ? 45 : 90);
+  }
+
+  updateTyping();
+
+  /* CLOSE MOBILE MENU */
+
+  document.querySelectorAll('.nav-links a').forEach(link=>{
+    link.addEventListener('click',()=>{
+      document.getElementById('navMenu').classList.remove('active');
+    });
+  });
 
 </script>
 
