@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esmaeel Jalili - Senior Java Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -12,610 +12,507 @@
             margin: 0;
             padding: 0;
         }
-
-        :root {
-            --primary-color: #6a1b9a;
-            --secondary-color: #ab47bc;
-            --accent-color: #ce93d8;
-            --bg-gradient-start: #f5f7fa;
-            --bg-gradient-end: #e6e6fa;
-            --card-bg: #ffffff;
-            --card-hover-shadow: 0 8px 25px rgba(106, 27, 154, 0.15);
-            --text-primary: #333333;
-            --text-secondary: #666666;
-            --border-radius: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
+        
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 200px;
         }
-
+        
         body {
             font-family: 'Vazirmatn', sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-            color: var(--text-primary);
-            line-height: 1.7;
-            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa, #e6e6fa);
+            color: #333;
+            line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* Typography */
+        
         .english { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif; 
         }
-
-        /* Container */
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             padding-top: 200px;
         }
-
-        /* Header Styles */
+        
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #6a1b9a, #ab47bc);
             color: white;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
             width: 100%;
             z-index: 1000;
-            transition: var(--transition);
+            transition: padding 0.3s ease;
         }
-
+        
         header.scrolled {
-            padding: 12px 20px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
         }
-
+        
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
         }
-
+        
         .header-title {
-            font-size: clamp(1.3rem, 3.5vw, 2.2rem);
-            margin: 12px 0;
-            font-weight: 700;
-            overflow: hidden;
-            white-space: nowrap;
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin: 10px 0;
             display: inline-block;
             max-width: 100%;
         }
-
+        
         .typing {
+            overflow: hidden;
+            white-space: nowrap;
             border-right: 3px solid white;
-            animation: typing 3.5s steps(40, end) 1, blink-caret 0.75s step-end infinite;
+            animation: typing 4s steps(40, end) 1, blink-caret 0.75s step-end infinite;
+            display: inline-block;
         }
-
+        
         @keyframes typing {
             from { width: 0; }
             to { width: 100%; }
         }
-
+        
         @keyframes blink-caret {
             from, to { border-color: transparent; }
             50% { border-color: white; }
         }
-
+        
         .contact-info {
-            font-size: clamp(0.85rem, 2vw, 1rem);
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
             margin-top: 15px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
             gap: 15px;
+            align-items: center;
         }
-
+        
         .contact-info span {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            white-space: nowrap;
+            gap: 5px;
         }
-
+        
         .contact-info i {
-            font-size: 1.1em;
-            transition: var(--transition);
+            transition: transform 0.3s;
         }
-
-        .contact-info span:hover i {
-            transform: scale(1.2);
+        
+        .contact-info i:hover {
+            transform: translateY(-3px);
         }
-
-        /* Navigation */
+        
         .navbar {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
+            border-radius: 10px;
             margin-top: 15px;
             padding: 10px;
         }
-
+        
         .nav-menu {
             list-style: none;
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 10px;
             flex-wrap: wrap;
             margin: 0;
-            padding: 0;
         }
-
-        .nav-menu li {
-            margin: 0;
-            padding: 0;
-        }
-
+        
         .nav-menu li a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
-            padding: 10px 16px;
-            border-radius: 25px;
-            font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-            transition: var(--transition);
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
+            transition: background 0.3s, transform 0.3s;
             white-space: nowrap;
             display: block;
         }
-
+        
         .nav-menu li a:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
-
+        
         .nav-toggle {
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
             color: white;
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 10px;
             z-index: 10;
-            padding: 8px;
-            transition: var(--transition);
         }
-
-        .nav-toggle:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
-
+        
         [dir="rtl"] .nav-toggle {
             right: 10px;
         }
-
+        
         [dir="ltr"] .nav-toggle {
             left: 10px;
         }
-
+        
         .lang-switch {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 10px;
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 10px 16px;
-            border-radius: 25px;
+            padding: 8px 12px;
+            border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.2s;
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-            font-weight: 600;
+            gap: 5px;
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
             z-index: 10;
         }
-
+        
         [dir="rtl"] .lang-switch {
             left: 10px;
         }
-
+        
         [dir="ltr"] .lang-switch {
             right: 10px;
         }
-
+        
         .lang-switch:hover {
             background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-50%) scale(1.05);
+            transform: scale(1.05);
         }
-
-        /* Section Styles */
+        
         section {
             margin: 30px 0;
-            padding: 25px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            animation: slideUp 0.6s ease-out;
-            transition: var(--transition);
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: slideUp 0.5s ease-in;
         }
-
-        section:hover {
-            box-shadow: var(--card-hover-shadow);
-            transform: translateY(-2px);
-        }
-
+        
         @keyframes slideUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
+        
         h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 12px;
+            color: #6a1b9a;
+            border-bottom: 2px solid #ab47bc;
+            padding-bottom: 10px;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: clamp(1.3rem, 3vw, 1.8rem);
-            font-weight: 700;
+            font-size: clamp(1.2rem, 3.5vw, 1.6rem);
         }
-
-        h2 i {
-            font-size: 1.2em;
-        }
-
-        /* Skills Container */
+        
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-
+        
         .skill-card {
-            background: linear-gradient(135deg, #f3e5f5, #fce4ec);
+            background: #f3e5f5;
             padding: 20px;
-            border-radius: var(--border-radius);
+            border-radius: 10px;
             text-align: center;
-            transition: var(--transition);
-            border: 2px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--card-hover-shadow);
-            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
-
+        
         .skill-card h3 {
-            color: var(--primary-color);
-            font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+            color: #6a1b9a;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            font-weight: 700;
         }
-
+        
         .skill-card ul {
             list-style: none;
             padding: 0;
         }
-
+        
         .skill-card li {
             margin: 10px 0;
-            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 0;
         }
-
+        
         .skill-card li i {
-            color: var(--primary-color);
-            font-size: 1.1em;
+            color: #6a1b9a;
+            font-size: 1rem;
         }
-
-        /* Project Cards */
+        
         .project-card {
-            background: linear-gradient(135deg, #f3e5f5, #fce4ec);
-            padding: 25px;
-            border-radius: var(--border-radius);
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 10px;
             margin-bottom: 20px;
-            transition: var(--transition);
-            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        [dir="ltr"] .project-card {
-            border-left: none;
-            border-right: 5px solid var(--secondary-color);
-        }
-
+        
         .project-card:hover {
-            transform: translateX(-5px);
-            box-shadow: var(--card-hover-shadow);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
-
-        [dir="ltr"] .project-card:hover {
-            transform: translateX(5px);
-        }
-
+        
         .project-card h3 {
-            color: var(--secondary-color);
-            font-size: clamp(1.1rem, 2.3vw, 1.35rem);
+            color: #ab47bc;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             margin-bottom: 15px;
-            font-weight: 700;
         }
-
+        
         .project-card p {
             line-height: 1.8;
             margin-bottom: 15px;
-            color: var(--text-secondary);
         }
-
-        /* Tech Chips */
+        
         .tech-chips {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
         }
-
+        
         .tech-chip {
-            background: var(--primary-color);
+            background: #6a1b9a;
             color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: clamp(0.8rem, 1.6vw, 0.9rem);
-            display: inline-flex;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            display: flex;
             align-items: center;
-            gap: 6px;
-            transition: var(--transition);
-            font-weight: 500;
+            gap: 5px;
+            transition: background 0.3s, transform 0.2s;
         }
-
+        
         .tech-chip:hover {
-            background: var(--secondary-color);
+            background: #ab47bc;
             transform: scale(1.05);
         }
-
-        /* List Styles */
+        
         ul {
             list-style: none;
             padding: 0;
         }
-
-        section > ul > li {
+        
+        li {
             margin: 12px 0;
             position: relative;
-            font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-            line-height: 1.8;
-            padding: 0;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
         }
-
-        [dir="rtl"] section > ul > li {
-            padding-right: 30px;
+        
+        [dir="rtl"] li {
+            padding-right: 25px;
             text-align: right;
         }
-
-        [dir="rtl"] section > ul > li::before {
+        
+        [dir="rtl"] li::before {
             content: "◀";
             position: absolute;
             right: 0;
-            color: var(--secondary-color);
+            color: #6a1b9a;
             font-weight: bold;
         }
-
-        [dir="ltr"] section > ul > li {
-            padding-left: 30px;
+        
+        [dir="ltr"] li {
+            padding-left: 25px;
             text-align: left;
         }
-
-        [dir="ltr"] section > ul > li::before {
+        
+        [dir="ltr"] li::before {
             content: "▶";
             position: absolute;
             left: 0;
-            color: var(--secondary-color);
+            color: #6a1b9a;
             font-weight: bold;
         }
-
-        /* Color Classes */
+        
         .text-red { color: #e53935; }
-        .text-blue { color: #1e88e5; }
-        .text-pink { color: #d81b60; }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .container {
-                padding-top: 220px;
-            }
-
-            .skills-container {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            }
-        }
-
+        .text-blue { color: #199ff1; }
+        .text-pink { color: #cb05ee; }
+        
+        /* Tablet */
         @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 220px;
+            }
+            
             .container {
                 padding: 15px;
-                padding-top: 240px;
+                padding-top: 220px;
             }
-
+            
             header {
                 padding: 15px 10px;
             }
-
-            .header-title {
-                margin: 10px 0;
-                white-space: normal;
-                border-right: none;
-                animation: none;
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 15px;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                margin-top: 0;
             }
-
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .header-title {
+                margin-top: 40px;
+            }
+            
             .contact-info {
                 flex-direction: column;
                 gap: 10px;
             }
-
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                gap: 8px;
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 15px;
-                border-radius: 0 0 var(--border-radius) var(--border-radius);
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-                margin-top: 0;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-toggle {
-                display: block;
-            }
-
-            .navbar {
-                position: relative;
-                background: transparent;
-                padding: 0;
-            }
-
-            [dir="rtl"] .lang-switch {
-                left: auto;
-                right: 60px;
-            }
-
-            [dir="ltr"] .lang-switch {
-                right: auto;
-                left: 60px;
-            }
-
-            section {
-                padding: 20px 15px;
-                margin: 20px 0;
-            }
-
+            
             .skills-container {
                 grid-template-columns: 1fr;
             }
-
-            .project-card {
-                padding: 20px 15px;
+            
+            section {
+                padding: 15px;
+                margin: 20px 0;
             }
         }
-
+        
+        /* Mobile */
         @media (max-width: 480px) {
+            html {
+                scroll-padding-top: 240px;
+            }
+            
             .container {
                 padding: 10px;
-                padding-top: 260px;
+                padding-top: 240px;
             }
-
+            
             header {
                 padding: 12px 8px;
             }
-
-            .lang-switch {
-                padding: 8px 12px;
-                font-size: 0.8rem;
+            
+            .header-title {
+                font-size: clamp(1rem, 4vw, 1.2rem);
+                margin-top: 35px;
             }
-
-            [dir="rtl"] .lang-switch {
-                right: 50px;
+            
+            .contact-info {
+                font-size: clamp(0.75rem, 2.5vw, 0.85rem);
             }
-
-            [dir="ltr"] .lang-switch {
-                left: 50px;
-            }
-
+            
             .nav-toggle {
                 font-size: 1.3rem;
+                top: 8px;
             }
-
+            
+            [dir="rtl"] .nav-toggle {
+                right: 8px;
+            }
+            
+            [dir="ltr"] .nav-toggle {
+                left: 8px;
+            }
+            
+            .lang-switch {
+                padding: 6px 10px;
+                font-size: clamp(0.7rem, 2vw, 0.8rem);
+                top: 8px;
+            }
+            
+            [dir="rtl"] .lang-switch {
+                left: 8px;
+            }
+            
+            [dir="ltr"] .lang-switch {
+                right: 8px;
+            }
+            
             section {
-                padding: 15px 12px;
+                padding: 12px;
+                margin: 15px 0;
             }
-
+            
             h2 {
-                font-size: 1.2rem;
+                font-size: clamp(1rem, 3.5vw, 1.3rem);
             }
-
+            
+            .project-card {
+                padding: 15px;
+            }
+            
             .tech-chips {
                 gap: 8px;
             }
-
+            
             .tech-chip {
                 padding: 5px 10px;
-                font-size: 0.8rem;
+                font-size: clamp(0.7rem, 2vw, 0.8rem);
             }
         }
-
-        /* Print Styles */
-        @media print {
-            header {
-                position: relative;
+        
+        /* Extra small devices */
+        @media (max-width: 360px) {
+            .header-title {
+                font-size: 0.95rem;
             }
-
-            .container {
-                padding-top: 20px;
+            
+            .contact-info {
+                font-size: 0.75rem;
             }
-
-            .nav-toggle,
-            .lang-switch {
-                display: none;
+            
+            .nav-menu li a {
+                font-size: 0.75rem;
+                padding: 6px 10px;
             }
-
-            section {
-                page-break-inside: avoid;
-            }
-        }
-
-        /* Accessibility */
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            padding: 0;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        /* Loading Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        body {
-            animation: fadeIn 0.5s ease-in;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            <div class="nav-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
-            <div class="lang-switch" onclick="toggleLanguage()" aria-label="Switch language">
-                <i class="fas fa-globe"></i> 
-                <span class="lang-text">English</span>
+            <div class="lang-switch" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i> <span class="lang-text">English</span>
             </div>
             <div class="header-title persian typing">اسماعیل جلیلی 💻 توسعه‌دهنده ارشد جاوا</div>
             <div class="header-title english typing" style="display: none;">Esmaeel Jalili 💻 Senior Java Developer</div>
@@ -625,23 +522,23 @@
                 <span><i class="fas fa-phone text-pink"></i> <span dir="ltr">+98 910 119 3203</span></span>
             </div>
             <nav class="navbar">
-                <ul class="nav-menu" role="navigation">
-                    <li><a href="#about"><span class="persian">درباره من</span><span class="english" style="display: none;">About Me</span></a></li>
-                    <li><a href="#skills"><span class="persian">مهارت‌ها</span><span class="english" style="display: none;">Skills</span></a></li>
-                    <li><a href="#education"><span class="persian">تحصیلات</span><span class="english" style="display: none;">Education</span></a></li>
-                    <li><a href="#experience"><span class="persian">تجربیات</span><span class="english" style="display: none;">Experience</span></a></li>
-                    <li><a href="#personality"><span class="persian">ویژگی‌ها</span><span class="english" style="display: none;">Traits</span></a></li>
-                    <li><a href="#languages"><span class="persian">زبان‌ها</span><span class="english" style="display: none;">Languages</span></a></li>
-                    <li><a href="#interests"><span class="persian">علایق</span><span class="english" style="display: none;">Interests</span></a></li>
+                <ul class="nav-menu">
+                    <li><a href="#about" onclick="closeMenu()"><span class="persian">درباره من</span><span class="english" style="display: none;">About Me</span></a></li>
+                    <li><a href="#skills" onclick="closeMenu()"><span class="persian">مهارت‌های تخصصی</span><span class="english" style="display: none;">Technical Skills</span></a></li>
+                    <li><a href="#education" onclick="closeMenu()"><span class="persian">سوابق تحصیلی</span><span class="english" style="display: none;">Education</span></a></li>
+                    <li><a href="#experience" onclick="closeMenu()"><span class="persian">سوابق حرفه‌ای</span><span class="english" style="display: none;">Professional Experience</span></a></li>
+                    <li><a href="#personality" onclick="closeMenu()"><span class="persian">ویژگی‌های شخصیتی</span><span class="english" style="display: none;">Personality Traits</span></a></li>
+                    <li><a href="#languages" onclick="closeMenu()"><span class="persian">زبان‌ها</span><span class="english" style="display: none;">Languages</span></a></li>
+                    <li><a href="#interests" onclick="closeMenu()"><span class="persian">علایق شخصی</span><span class="english" style="display: none;">Personal Interests</span></a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
+    
     <div class="container">
         <section id="about">
             <h2><i class="fas fa-user"></i> <span class="persian">درباره من</span><span class="english" style="display: none;">About Me</span></h2>
-            <p class="persian">من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم. کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌های کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم. به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.</p>
+            <p class="persian">من، اسماعیل جلیلی پایدار، متولد ۲۸ اسفند ۱۳۷۲ (۱۹ مارس ۱۹۹۴)، توسعه‌دهنده‌ای خودآموخته و پرانرژی با بیش از ۱۰ سال تجربه حرفه‌ای در طراحی، پیاده‌سازی و توسعه‌ی سیستم‌های مبتنی بر Java و فناوری‌های Spring Framework، Reactive Programming و Microservices هستم. کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها کامپیوتری باعث شد از دوران نوجوانی وارد دنیای برنامه‌نویسی شوم. با وجود محدودیت منابع آموزشی در ایران، مسیر یادگیری خود را به‌صورت خودآموز طی کردم و توانستم در زمینه‌ی توسعه‌ی نرم‌افزارهای سازمانی و سیستم‌های پیچیده، مهارت‌های تخصصی کسب کنم. به عنوان فردی با تیپ شخصیتی INTJ (معمار)، دارای رویکردی تحلیلی، منطقی و هدف‌محور در حل مسائل پیچیده هستم و از یادگیری و خلق سیستم‌های بهینه لذت می‌برم.</p>
             <p class="english" style="display: none;">I am Esmaeel Jalili Paydar, born on March 19, 1994, a self-taught and energetic developer with over 10 years of professional experience in designing, implementing, and developing systems based on Java and technologies such as Spring Framework, Reactive Programming, and Microservices. My deep curiosity about how computer systems work led me to enter the world of programming during my teenage years. Despite limited educational resources in Iran, I pursued my learning path self-taught and acquired specialized skills in developing enterprise software and complex systems. As an individual with an INTJ personality type (Architect), I have an analytical, logical, and goal-oriented approach to solving complex problems and enjoy learning and creating optimized systems.</p>
         </section>
 
@@ -652,19 +549,19 @@
                     <h3><i class="fas fa-code"></i> <span class="persian">زبان‌ها و فریم‌ورک‌ها</span><span class="english" style="display: none;">Languages & Frameworks</span></h3>
                     <ul>
                         <li><i class="fab fa-java"></i> Java Core, Reactive, Functional</li>
-                        <li><i class="fas fa-leaf"></i> Spring Framework</li>
+                        <li><i class="fas fa-leaf"></i> Spring Framework Boot, Cloud, Security, Data</li>
                         <li><i class="fas fa-database"></i> Hibernate / JPA</li>
-                        <li><i class="fas fa-link"></i> RESTful API</li>
+                        <li><i class="fas fa-link"></i> RESTful API Development</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-puzzle-piece"></i> <span class="persian">معماری نرم‌افزار</span><span class="english" style="display: none;">Software Architecture</span></h3>
                     <ul>
-                        <li><i class="fas fa-cubes"></i> Microservices</li>
+                        <li><i class="fas fa-cubes"></i> Microservices Architecture</li>
                         <li><i class="fas fa-bolt"></i> Reactive Programming</li>
                         <li><i class="fas fa-cloud"></i> Cloud-Native Design</li>
-                        <li><i class="fas fa-envelope"></i> RabbitMQ</li>
-                        <li><i class="fas fa-lock"></i> Keycloak & JWT</li>
+                        <li><i class="fas fa-envelope"></i> Message-Driven Systems RabbitMQ</li>
+                        <li><i class="fas fa-lock"></i> Keycloak & JWT Authentication</li>
                     </ul>
                 </div>
                 <div class="skill-card">
@@ -673,14 +570,13 @@
                         <li><i class="fab fa-git-alt"></i> Git, GitHub, GitLab</li>
                         <li><i class="fab fa-jira"></i> Jira, Scrum, Agile</li>
                         <li><i class="fab fa-docker"></i> Docker & DevOps</li>
-                        <li><i class="fas fa-cogs"></i> CI/CD</li>
+                        <li><i class="fas fa-cogs"></i> CI/CD & Build Automation</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-database"></i> <span class="persian">پایگاه داده‌ها</span><span class="english" style="display: none;">Databases</span></h3>
                     <ul>
-                        <li><i class="fas fa-server"></i> MySQL, PostgreSQL</li>
-                        <li><i class="fas fa-database"></i> Oracle Database</li>
+                        <li><i class="fas fa-server"></i> MySQL, PostgreSQL, Oracle</li>
                         <li><i class="fas fa-tachometer-alt"></i> SQL Optimization</li>
                     </ul>
                 </div>
@@ -688,8 +584,7 @@
                     <h3><i class="fas fa-paint-brush"></i> <span class="persian">فرانت‌اند</span><span class="english" style="display: none;">Front-End</span></h3>
                     <ul>
                         <li><i class="fab fa-angular"></i> Angular, TypeScript</li>
-                        <li><i class="fab fa-html5"></i> HTML5, CSS3</li>
-                        <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                        <li><i class="fab fa-html5"></i> HTML5, CSS3, Bootstrap</li>
                     </ul>
                 </div>
             </div>
@@ -697,213 +592,220 @@
 
         <section id="education">
             <h2><i class="fas fa-graduation-cap"></i> <span class="persian">سوابق تحصیلی</span><span class="english" style="display: none;">Education</span></h2>
-            <p><strong class="persian">کارشناسی مهندسی هوافضا</strong><strong class="english" style="display: none;">Bachelor's in Aerospace Engineering</strong></p>
-            <p class="persian">دانشگاه آزاد اسلامی واحد نجف‌آباد | 📅 مهر ۱۳۹۱ – خرداد ۱۳۹۶</p>
-            <p class="english" style="display: none;">Islamic Azad University, Najafabad Branch | 📅 October 2012 – June 2017</p>
+            <p class="persian">کارشناسی مهندسی هوافضا - دانشگاه آزاد اسلامی واحد نجف‌آباد - 📅 مهر ۱۳۹۱ – خرداد ۱۳۹۶</p>
+            <p class="english" style="display: none;">Bachelor's in Aerospace Engineering - Islamic Azad University, Najafabad Branch - 📅 October 2012 – June 2017</p>
         </section>
 
         <section id="experience">
             <h2><i class="fas fa-briefcase"></i> <span class="persian">سوابق حرفه‌ای</span><span class="english" style="display: none;">Professional Experience</span></h2>
             
             <div class="project-card">
-                <h3><span class="persian">توسعه‌دهنده فول‌استک جاوا | شرکت خصوصی فناوری اطلاعات</span><span class="english" style="display: none;">Full-Stack Java Developer | Private IT Company</span></h3>
-                <p><strong>📅 <span class="persian">۱۴۰۱ – ۱۴۰۴</span><span class="english" style="display: none;">2022 – 2025</span></strong></p>
-                <p class="persian"><strong>پروژه:</strong> توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه</p>
-                <p class="english" style="display: none;"><strong>Project:</strong> Development of Enterprise Application for Insurance Companies</p>
-                <p class="persian">طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعل
-                                    <p class="persian">طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، صدور و گزارش‌گیری با معماری Microservices و Spring Boot.</p>
-                <p class="english" style="display: none;">Designed and developed an enterprise system for insurance workflow management including registration, inquiry, issuance, and reporting using Microservices architecture and Spring Boot.</p>
-
+                <h3><span class="persian">توسعه‌دهنده فول‌استک جاوا | شرکت خصوصی فناوری اطلاعات 📅 ۱۴۰۱ – ۱۴۰۴</span><span class="english" style="display: none;">Full-Stack Java Developer | Private IT Company 📅 2022 – 2025</span></h3>
+                <p class="persian"><strong>پروژه: توسعه‌ی اپلیکیشن سازمانی برای شرکت‌های بیمه</strong><br><br>
+                <strong>شرح پروژه:</strong><br>
+                طراحی و توسعه‌ی سیستم جامع سازمانی برای مدیریت فرآیندهای بیمه شامل ثبت، استعلام، محاسبه‌ی حق بیمه و صدور و مدیریت کاربران و …در سازمان‌های بیمه‌گر بزرگ.<br>
+                توسعه‌ی بک‌اند با استفاده از Spring Framework، Hibernate و Oracle Database<br>
+                طراحی و توسعه‌ی رابط کاربری با JSP و Kendo UI<br>
+                استفاده از فریم‌ورک داخلی شرکت جهت توسعه‌ی ماژول‌های اختصاصی<br>
+                پیاده‌سازی لایه‌ی سرویس و مدل داده برای ارتباط مؤثر بین ماژول‌ها<br>
+                استفاده از Jira برای مدیریت وظایف و GitLab جهت کنترل نسخه<br>
+                توسعه و نگه‌داری در محیط Agile / Scrum<br>
+                استفاده از IntelliJ IDEA برای توسعه و Maven برای Build پروژه</p>
+                <p class="english" style="display: none;"><strong>Project: Development of Enterprise Application for Insurance Companies</strong><br><br>
+                <strong>Description:</strong><br>
+                Design and development of a comprehensive organizational system for managing insurance processes including registration, inquiry, premium calculation, issuance, and user management in large insurance organizations.<br>
+                Back-end development using Spring Framework, Hibernate, and Oracle Database<br>
+                UI design and development with JSP and Kendo UI<br>
+                Using the company's internal framework for developing custom modules<br>
+                Implementing service layer and data model for effective communication between modules<br>
+                Using Jira for task management and GitLab for version control<br>
+                Development and maintenance in Agile / Scrum environment<br>
+                Using IntelliJ IDEA for development and Maven for project build</p>
+                <div class="tech-chips">
+                    <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
+                    <span class="tech-chip"><i class="fas fa-leaf"></i> Spring Framework</span>
+                    <span class="tech-chip"><i class="fas fa-database"></i> Hibernate</span>
+                    <span class="tech-chip"><i class="fas fa-code"></i> JSP</span>
+                    <span class="tech-chip"><i class="fas fa-paint-brush"></i> Kendo UI</span>
+                    <span class="tech-chip"><i class="fas fa-database"></i> Oracle DB</span>
+                    <span class="tech-chip"><i class="fab fa-gitlab"></i> GitLab</span>
+                    <span class="tech-chip"><i class="fab fa-jira"></i> Jira</span>
+                    <span class="tech-chip"><i class="fas fa-cogs"></i> Agile</span>
+                    <span class="tech-chip"><i class="fas fa-tools"></i> IntelliJ IDEA</span>
+                </div>
+            </div>
+            
+                        <div class="project-card">
+                <h3><span class="persian">توسعه‌دهنده بک‌اند جاوا | شرکت خصوصی فناوری اطلاعات 📅 ۱۳۹۹ – ۱۴۰۱</span><span class="english" style="display: none;">Back-End Java Developer | Private IT Company 📅 2020 – 2022</span></h3>
+                <p class="persian"><strong>پروژه: توسعه‌ی سیستم مدیریت املاک و مستغلات</strong><br><br>
+                <strong>شرح پروژه:</strong><br>
+                طراحی و توسعه‌ی سیستم جامع مدیریت املاک شامل ثبت، ویرایش، جستجو و مدیریت اطلاعات ملک، مالکین و مستأجرین<br>
+                توسعه‌ی بک‌اند با Spring Boot و Spring Data JPA<br>
+                پیاده‌سازی RESTful API برای ارتباط با فرانت‌اند Angular<br>
+                استفاده از MySQL برای ذخیره‌سازی داده‌ها<br>
+                پیاده‌سازی احراز هویت و مجوزدهی با Spring Security<br>
+                استفاده از Git و GitHub برای کنترل نسخه<br>
+                توسعه در محیط Agile با استفاده از Jira</p>
+                <p class="english" style="display: none;"><strong>Project: Real Estate Management System Development</strong><br><br>
+                <strong>Description:</strong><br>
+                Design and development of a comprehensive real estate management system including registration, editing, searching, and managing property information, owners, and tenants<br>
+                Back-end development with Spring Boot and Spring Data JPA<br>
+                RESTful API implementation for communication with Angular front-end<br>
+                Using MySQL for data storage<br>
+                Authentication and authorization implementation with Spring Security<br>
+                Using Git and GitHub for version control<br>
+                Development in Agile environment using Jira</p>
                 <div class="tech-chips">
                     <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
                     <span class="tech-chip"><i class="fas fa-leaf"></i> Spring Boot</span>
-                    <span class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</span>
+                    <span class="tech-chip"><i class="fas fa-database"></i> Spring Data JPA</span>
+                    <span class="tech-chip"><i class="fas fa-lock"></i> Spring Security</span>
+                    <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
                     <span class="tech-chip"><i class="fab fa-angular"></i> Angular</span>
-                    <span class="tech-chip"><i class="fab fa-docker"></i> Docker</span>
+                    <span class="tech-chip"><i class="fab fa-github"></i> GitHub</span>
+                    <span class="tech-chip"><i class="fab fa-jira"></i> Jira</span>
                 </div>
             </div>
-
+            
             <div class="project-card">
-                <h3><span class="persian">توسعه‌دهنده بک‌اند | سیستم مالی و بانکی</span><span class="english" style="display: none;">Back-End Developer | Banking & Financial System</span></h3>
-                <p><strong>📅 <span class="persian">۱۳۹۸ – ۱۴۰۱</span><span class="english" style="display: none;">2019 – 2022</span></strong></p>
-
-                <p class="persian">پیاده‌سازی سرویس‌های مالی امن و مقیاس‌پذیر با استفاده از Spring Security، JWT و RabbitMQ.</p>
-                <p class="english" style="display: none;">Implemented secure and scalable financial services using Spring Security, JWT, and RabbitMQ.</p>
-
+                <h3><span class="persian">توسعه‌دهنده جاوا | شرکت خصوصی فناوری اطلاعات 📅 ۱۳۹۷ – ۱۳۹۹</span><span class="english" style="display: none;">Java Developer | Private IT Company 📅 2018 – 2020</span></h3>
+                <p class="persian"><strong>پروژه: توسعه‌ی سیستم مدیریت فروش و انبار</strong><br><br>
+                <strong>شرح پروژه:</strong><br>
+                توسعه‌ی سیستم جامع مدیریت فروش، انبار و حسابداری برای شرکت‌های تولیدی و توزیعی<br>
+                توسعه‌ی بک‌اند با Spring Framework و Hibernate<br>
+                طراحی و پیاده‌سازی پایگاه داده با MySQL<br>
+                توسعه‌ی رابط کاربری با JSP و Bootstrap<br>
+                پیاده‌سازی گزارش‌گیری با JasperReports<br>
+                استفاده از Maven برای مدیریت وابستگی‌ها<br>
+                کار تیمی با استفاده از Git</p>
+                <p class="english" style="display: none;"><strong>Project: Sales and Warehouse Management System Development</strong><br><br>
+                <strong>Description:</strong><br>
+                Development of a comprehensive sales, warehouse, and accounting management system for manufacturing and distribution companies<br>
+                Back-end development with Spring Framework and Hibernate<br>
+                Database design and implementation with MySQL<br>
+                UI development with JSP and Bootstrap<br>
+                Reporting implementation with JasperReports<br>
+                Using Maven for dependency management<br>
+                Team collaboration using Git</p>
                 <div class="tech-chips">
                     <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
-                    <span class="tech-chip"><i class="fas fa-shield-alt"></i> Spring Security</span>
-                    <span class="tech-chip"><i class="fas fa-envelope"></i> RabbitMQ</span>
-                    <span class="tech-chip"><i class="fas fa-key"></i> JWT</span>
+                    <span class="tech-chip"><i class="fas fa-leaf"></i> Spring Framework</span>
+                    <span class="tech-chip"><i class="fas fa-database"></i> Hibernate</span>
+                    <span class="tech-chip"><i class="fas fa-code"></i> JSP</span>
+                    <span class="tech-chip"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                    <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
+                    <span class="tech-chip"><i class="fas fa-file-pdf"></i> JasperReports</span>
+                    <span class="tech-chip"><i class="fab fa-git-alt"></i> Git</span>
                 </div>
             </div>
         </section>
 
         <section id="personality">
-            <h2><i class="fas fa-brain"></i> <span class="persian">ویژگی‌های فردی</span><span class="english" style="display: none;">Personality Traits</span></h2>
-
+            <h2><i class="fas fa-brain"></i> <span class="persian">ویژگی‌های شخصیتی</span><span class="english" style="display: none;">Personality Traits</span></h2>
             <ul>
-                <li>
-                    <span class="persian">تفکر تحلیلی و حل مسئله در سیستم‌های پیچیده</span>
-                    <span class="english" style="display: none;">Analytical thinking and complex problem solving</span>
-                </li>
-
-                <li>
-                    <span class="persian">یادگیری سریع تکنولوژی‌های جدید</span>
-                    <span class="english" style="display: none;">Fast learner of new technologies</span>
-                </li>
-
-                <li>
-                    <span class="persian">توانایی طراحی معماری نرم‌افزار مقیاس‌پذیر</span>
-                    <span class="english" style="display: none;">Ability to design scalable software architectures</span>
-                </li>
-
-                <li>
-                    <span class="persian">تجربه کار تیمی در محیط Agile و Scrum</span>
-                    <span class="english" style="display: none;">Experience working in Agile and Scrum teams</span>
-                </li>
+                <li class="persian">تیپ شخصیتی: INTJ (معمار) - تحلیلگر، منطقی، مستقل و هدف‌محور</li>
+                <li class="english" style="display: none;">Personality Type: INTJ (Architect) - Analytical, logical, independent, and goal-oriented</li>
+                <li class="persian">کنجکاوی عمیق نسبت به نحوه‌ی عملکرد سیستم‌ها و فناوری‌های نوین</li>
+                <li class="english" style="display: none;">Deep curiosity about how systems and new technologies work</li>
+                <li class="persian">توانایی یادگیری سریع و خودآموز</li>
+                <li class="english" style="display: none;">Fast learning ability and self-taught</li>
+                <li class="persian">رویکرد تحلیلی و منطقی در حل مسائل پیچیده</li>
+                <li class="english" style="display: none;">Analytical and logical approach to solving complex problems</li>
+                <li class="persian">علاقه‌مند به بهینه‌سازی و خلق سیستم‌های کارآمد</li>
+                <li class="english" style="display: none;">Interested in optimization and creating efficient systems</li>
+                <li class="persian">توانایی کار تیمی و همکاری مؤثر در محیط‌های Agile</li>
+                <li class="english" style="display: none;">Team collaboration ability and effective cooperation in Agile environments</li>
             </ul>
         </section>
 
         <section id="languages">
             <h2><i class="fas fa-language"></i> <span class="persian">زبان‌ها</span><span class="english" style="display: none;">Languages</span></h2>
-
             <ul>
-                <li>
-                    <span class="persian">فارسی — زبان مادری</span>
-                    <span class="english" style="display: none;">Persian — Native</span>
-                </li>
-
-                <li>
-                    <span class="persian">انگلیسی — سطح حرفه‌ای برای مطالعه مستندات و توسعه نرم‌افزار</span>
-                    <span class="english" style="display: none;">English — Professional working proficiency</span>
-                </li>
+                <li class="persian">فارسی: زبان مادری</li>
+                <li class="english" style="display: none;">Persian: Native</li>
+                <li class="persian">انگلیسی: متوسط (خواندن و نوشتن مستندات فنی)</li>
+                <li class="english" style="display: none;">English: Intermediate (reading and writing technical documentation)</li>
             </ul>
         </section>
 
         <section id="interests">
-            <h2><i class="fas fa-heart"></i> <span class="persian">علایق</span><span class="english" style="display: none;">Interests</span></h2>
-
+            <h2><i class="fas fa-heart"></i> <span class="persian">علایق شخصی</span><span class="english" style="display: none;">Personal Interests</span></h2>
             <ul>
-                <li>
-                    <span class="persian">معماری نرم‌افزار و سیستم‌های توزیع‌شده</span>
-                    <span class="english" style="display: none;">Software architecture and distributed systems</span>
-                </li>
-
-                <li>
-                    <span class="persian">هوش مصنوعی و فناوری‌های نوین</span>
-                    <span class="english" style="display: none;">Artificial intelligence and emerging technologies</span>
-                </li>
-
-                <li>
-                    <span class="persian">مطالعه و تحقیق در حوزه مهندسی نرم‌افزار</span>
-                    <span class="english" style="display: none;">Research and study in software engineering</span>
-                </li>
+                <li class="persian">مطالعه‌ی کتاب‌های فنی و مقالات علمی در حوزه‌ی فناوری اطلاعات</li>
+                <li class="english" style="display: none;">Reading technical books and scientific articles in IT</li>
+                <li class="persian">یادگیری فناوری‌های نوین و ابزارهای جدید توسعه نرم‌افزار</li>
+                <li class="english" style="display: none;">Learning new technologies and modern software development tools</li>
+                <li class="persian">مشارکت در پروژه‌های Open Source</li>
+                <li class="english" style="display: none;">Contributing to Open Source projects</li>
+                <li class="persian">بازی‌های ویدیویی استراتژیک و پازل</li>
+                <li class="english" style="display: none;">Strategic and puzzle video games</li>
+                <li class="persian">گوش دادن به موسیقی کلاسیک و الکترونیک</li>
+                <li class="english" style="display: none;">Listening to classical and electronic music</li>
             </ul>
         </section>
     </div>
 
     <script>
-        let isPersian = true;
-
-        function toggleLanguage() {
-            isPersian = !isPersian;
-
-            const persianElements = document.querySelectorAll('.persian');
-            const englishElements = document.querySelectorAll('.english');
-            const html = document.documentElement;
-            const langText = document.querySelector('.lang-text');
-
-            if (isPersian) {
-                html.lang = 'fa';
-                html.dir = 'rtl';
-                langText.textContent = 'English';
-
-                persianElements.forEach(el => {
-                    el.style.display = '';
-                });
-
-                englishElements.forEach(el => {
-                    el.style.display = 'none';
-                });
-
-            } else {
-                html.lang = 'en';
-                html.dir = 'ltr';
-                langText.textContent = 'فارسی';
-
-                persianElements.forEach(el => {
-                    el.style.display = 'none';
-                });
-
-                englishElements.forEach(el => {
-                    el.style.display = '';
-                });
-            }
-
-            restartTypingAnimation();
-        }
-
-        function restartTypingAnimation() {
-            const visibleTitle = document.querySelector(
-                isPersian
-                    ? '.header-title.persian'
-                    : '.header-title.english'
-            );
-
-            visibleTitle.classList.remove('typing');
-
-            void visibleTitle.offsetWidth;
-
-            visibleTitle.classList.add('typing');
-        }
-
         function toggleMenu() {
             const navMenu = document.querySelector('.nav-menu');
             navMenu.classList.toggle('active');
         }
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-menu').classList.remove('active');
+        
+        function closeMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.remove('active');
+        }
+        
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const persianElements = document.querySelectorAll('.persian');
+            const englishElements = document.querySelectorAll('.english');
+            const langText = document.querySelector('.lang-text');
+            
+            if (html.getAttribute('lang') === 'fa') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                persianElements.forEach(el => el.style.display = 'none');
+                englishElements.forEach(el => el.style.display = el.classList.contains('typing') ? 'inline-block' : 'inline');
+                langText.textContent = 'فارسی';
+            } else {
+                html.setAttribute('lang', 'fa');
+                html.setAttribute('dir', 'rtl');
+                persianElements.forEach(el => el.style.display = el.classList.contains('typing') ? 'inline-block' : 'inline');
+                englishElements.forEach(el => el.style.display = 'none');
+                langText.textContent = 'English';
+            }
+            
+            // Restart typing animation
+            const typingElements = document.querySelectorAll('.typing');
+            typingElements.forEach(el => {
+                el.style.animation = 'none';
+                setTimeout(() => {
+                    el.style.animation = 'typing 4s steps(40, end) 1, blink-caret 0.75s step-end infinite';
+                }, 10);
             });
-        });
-
-        // Header scroll effect
+        }
+        
+        // Adjust body margin based on header height
+        function adjustHeaderSpace() {
+            const header = document.querySelector('header');
+            const headerHeight = header.offsetHeight;
+            document.body.style.marginTop = headerHeight + 'px';
+        }
+        
+        // Add scrolled class to header
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-
-            if (window.scrollY > 40) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
-
-        // Smooth active navigation
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-menu a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 220;
-
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.style.background = 'transparent';
-
-                if (link.getAttribute('href').includes(current)) {
-                    link.style.background = 'rgba(255,255,255,0.25)';
-                }
-            });
-        });
+        
+        // Adjust on load and resize
+        window.addEventListener('load', adjustHeaderSpace);
+        window.addEventListener('resize', adjustHeaderSpace);
     </script>
 </body>
 </html>
